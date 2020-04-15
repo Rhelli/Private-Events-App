@@ -5,6 +5,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      log_in user
+      flash[:success] = 'You have been signed in.'
+    else
+      render 'new'
+    end
   end
   
   def show
