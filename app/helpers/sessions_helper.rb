@@ -1,5 +1,5 @@
 module SessionsHelper
-  def log_in
+  def log_in(user)
     session[:name] = user.name
     @current_user = user
   end
