@@ -5,16 +5,16 @@ module SessionsHelper
   end
 
   def current_user
-    if user.name = session[:name]
+    # if user.name == session[:name]
       @current_user ||= User.find_by(name: user.name)
-    end
+    # end
   end
 
   def logged_in?
     !current_user.nil?
   end
 
-  def log_out
+  def log_out(user)
     session.delete(:name)
     @current_user = nil
   end
