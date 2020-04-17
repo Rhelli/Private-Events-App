@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# private_events
-Implementation of Association to build a site similar to Eventbrite
-=======
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,4 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> f9889e7909efa5155d33a0d8e40b3fce75d5604f
