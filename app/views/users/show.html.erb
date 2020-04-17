@@ -2,5 +2,12 @@
   <div>
     <%= @user.name %>
   </div>
+  <div>
+    <ul>
+      <% @user.event.each do |event| %>
+        <li><%= event %>
+      <% end %>
+    </ul>
+  </div>
   <%= link_to "Sign Out", signout_path, method: :delete %>
 </div>
