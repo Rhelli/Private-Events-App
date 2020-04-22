@@ -2,8 +2,9 @@
 <div>
   <h1>Event Page</h1>
 </div>
-<div>
-  <h2>The Creator of this event is:</h2>
-  <h3><%= @event.creator.name %> 🎉 </h3>
-</div>
+  <div>
+    <h2>The Creator of this event is:</h2>
+    <h3><%= @event.creator.name %> 🎉 </h3>
+  </div>
+  <%= link_to "Back to all events", events_path%>
 </div>

@@ -1,11 +1,15 @@
 <div style="text-align:center;">
   <div>
-    <%= @user.name %>
+    <p>Welcome, <%= @user.name %></p>
   </div>
   <div>
+    <h2>Your Events</h2>
     <ul>
       <% @user.events.each do |event| %>
-        <li><%= event %>
+        <li>
+          <p><%= event.name %></p>
+          <p><%= event.created_at %></p>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -16,6 +20,6 @@
     <p>******</p>
   </div>
   <div>
-    <%= link_to "Create a new event", events_new_path%>
+    <%= link_to "Create a new event", new_event_path %>
   </div>
 </div>
