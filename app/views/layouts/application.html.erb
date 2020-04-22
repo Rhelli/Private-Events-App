@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <% if logged_in? %>
+    <header style="text-align:right;">
+      <p>You are logged in</p>
+    </header
+  <% end %>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message) %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

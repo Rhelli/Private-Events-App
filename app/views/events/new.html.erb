@@ -1,0 +1,12 @@
+<div style="text-align:center;">
+  <h1>Create an Event</h1>
+
+  <%= form_for @event do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit 'Submit' %>
+
+  <% end %>
+</div>

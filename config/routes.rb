@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  root 'static_pages#home'
+  get '/signup', to: 'users#new'
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
+  #get 'events/new', to: 'events#new'
+  #post 'events/create', to: 'events#create'
+  
+  resources :events
+  resources :users
 end

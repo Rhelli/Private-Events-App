@@ -1,0 +1,12 @@
+<div style="text-align:center;">
+  <h1>List of Events</h1>
+  <ul>
+    <% @events.each do |event| %>
+    <li>
+      <p><%= link_to(event.name, event_path(event))%></p>
+      <p>Created on: <%= event.created_at %></p>
+      <p>Creator: <%= event.creator.name %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
