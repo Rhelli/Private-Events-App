@@ -1,3 +1,4 @@
+@import '@fortawesome/fontawesome-free';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -6,13 +7,18 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #f76a8c;
+  background-color: #c70039;
+  background-image: image-url('food.png');
 }
 
 .home-card {
-  background-color: #FDDAE2;
-  border-radius: 45px 65px 25px 25px 25px 25px 25px 25px;
-  width: 80%;
-  height: 60%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #F1E1E7;
+  border-radius: 25px;
+  width: 70%;
+  height: 80%;
   margin-top: 30px;
+
 }
