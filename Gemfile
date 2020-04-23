@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootstrap-sass'
 
+gem 'font_awesome5_rails'
+
 gem 'faker'
 
 gem 'hirb'

@@ -1,4 +1,4 @@
-@import '@fortawesome/fontawesome-free';
+//@import '@fortawesome/fontawesome-free';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -19,6 +19,19 @@ body {
   border-radius: 25px;
   width: 70%;
   height: 80%;
+  margin: 0 auto;
   margin-top: 30px;
+}
 
+.site-nav {
+  background-color: cornsilk;
+}
+
+.nav-logo {
+  img {
+    display: inline-block;
+    margin: 0 !important;
+    height: 25px;
+    width: 25px;
+  }
 }

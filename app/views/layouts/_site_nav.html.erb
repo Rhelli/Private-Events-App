@@ -1,21 +1,39 @@
 <header class="navbar navbar-fixed-top site-nav">
   <div class="container">
     <nav>
-      <a href="#" alt="" class="navbar-brand">
-        <%= image_tag "logo.png", class: "nav-logo d-inline-block align-top" %> Private Events
+      <a href="#" alt="" class="navbar-brand nav-logo brand">
+        <%= image_tag "logo.png" %> Private Events
       </a>
-      <ul class="navbar-nav nav navbar-right">
+      <ul class="navbar-nav nav navbar-left">
         <% if !logged_in? %>
           <li><%= link_to "Events", events_path %></li>
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown">Events<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "New Event" %>
+              <li><%= link_to "New Event" %><i class="fas fa-plus"></i></li>
+              <li class="divider"></li>
+              <li><%= link_to "All Events", "#" %></li>
+            </ul>
+          </li>
+          <li><%= link_to "Users", users_path %></li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav nav navbar-right">
+        <% if !logged_in? %>
+          <li><%= link_to "Sign In", signin_path %></li>
+          <li><%= link_to "Join Today", signup_path %></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown">My Profile<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Settings", "#" %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign Out", signout_path, method: :delete, id: "dropdown-link" %></li>
             </ul>
           </li>
         <% end %>
-      </ul>
+      </ul> 
     </nav>
   </div>
 </header>
