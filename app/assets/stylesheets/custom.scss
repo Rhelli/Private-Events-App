@@ -1,13 +1,18 @@
 //@import '@fortawesome/fontawesome-free';
 @import url(https://fonts.googleapis.com/css?family=Baloo+Bhaina+2:regular,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-body {
+html, body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
+}
+
+body {
   background-color: #c70039;
   background-image: image-url('food.png');
 }
@@ -22,9 +27,8 @@ body {
   width: 70%;
   height: 85%;
   margin: 0 auto;
-  margin-top: 30px;
   padding: 100px 20px 20px 20px;
-  overflow-y: scroll;
+  overflow-x: hidden;
   -webkit-box-shadow: 0px 3px 24px 3px rgba(72,6,32,1);
   -moz-box-shadow: 0px 3px 24px 3px rgba(72,6,32,1);
   box-shadow: 0px 3px 24px 3px rgba(72,6,32,1);
@@ -63,7 +67,8 @@ body {
     transition-duration: 0.08s;
     &:hover {
       background-color: #ffa41b !important;
-      color: #900C3F;
+      color: #900C3F !important;
+      font-weight: 600;
       border-radius: 40px;
       transform: scale(1.06);
       transition-duration: 0.05s;
@@ -93,10 +98,54 @@ body {
   height: 100%;
   width: 100%;
   background-color: #C70039;
-  background-image: image-url('binding-light.png');
+  background-image: image-url('dark-dot.png');
   border-radius: 10px;
   border: 2px solid #7E0B37;
   -webkit-box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
   -moz-box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
   box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
+}
+
+// SIGN-IN PAGE -------------------------------------------//
+.signin-container {
+  width: 60%;
+  height: 50%;
+  position: relative;
+  top: 45%;
+  transform: translateY(-45%);
+  margin: 0 auto;
+  background-color: #F1E1E7;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
+  -moz-box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
+  box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
+  font-family: 'Manrope', sans-serif;
+  border: 1px solid #7E0B37;
+}
+.signin-form {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  h2 {
+    font: 600 24px/24px;
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  input, textarea, select {
+    border: 1px solid #dcdcdc;
+    width: 60%;
+    height: 35px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  form {
+    text-align: center;
+    label {
+      text-align: left !important;
+    }
+  }
 }

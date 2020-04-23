@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top site-nav">
   <div>
     <nav>
-      <a href="#" alt="" class="navbar-brand nav-logo brand">
+      <%= link_to root_path, class: "navbar-brand nav-logo brand" do %>
         <%= image_tag "logo.png" %> Private Events
-      </a>
+      <% end %>
       <ul class="navbar-nav nav navbar-left justify-content-start">
         <% if !logged_in? %>
           <li><%= link_to "Events", events_path %></li>
