@@ -92,9 +92,11 @@ body {
 .home-page-container {
   height: 100%;
   width: 100%;
-  background-color: #900C3F;
+  background-color: #C70039;
+  background-image: image-url('binding-light.png');
   border-radius: 10px;
-  -webkit-box-shadow: inset 0px 0px 19px 2px rgba(108,9,47,1);
-  -moz-box-shadow: inset 0px 0px 19px 2px rgba(108,9,47,1);
-  box-shadow: inset 0px 0px 19px 2px rgba(108,9,47,1);
+  border: 2px solid #7E0B37;
+  -webkit-box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
+  -moz-box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
+  box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
 }
