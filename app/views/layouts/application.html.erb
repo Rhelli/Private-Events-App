@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div class="home-card">
+    <div class="home-card d-flex justify-content-center align-items-center">
       <%= render 'layouts/site_nav' %>
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message) %>
