@@ -1,12 +1,14 @@
-<div style="text-align:center;">
-  <h1>List of Events</h1>
+<div class="container event-container">
+  <h1>Upcoming Events</h1>
   <ul>
     <% @events.each do |event| %>
-    <li>
-      <p><%= link_to(event.name, event_path(event))%></p>
-      <p>Created on: <%= event.created_at %></p>
-      <p>Creator: <%= event.creator.name %></p>
-    </li>
+    <div class="event-card">
+      <li>
+        <p><%= link_to(event.name, event_path(event))%></p>
+        <p>Created on: <%= event.created_at %></p>
+        <p>Creator: <%= event.creator.name %></p>
+      </li>
+    </div>
     <% end %>
   </ul>
 </div>
