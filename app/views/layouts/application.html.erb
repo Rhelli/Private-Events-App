@@ -11,10 +11,12 @@
 
   <body>
     <div class="home-card d-flex justify-content-center align-items-center">
-      <%= render 'layouts/site_nav' %>
+    <div class="flash-container">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message) %>
       <% end %>
+    </div>
+      <%= render 'layouts/site_nav' %>
       <div class="home-page-container">
         <%= yield %>
       </div>

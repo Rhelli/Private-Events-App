@@ -52,6 +52,7 @@ body {
         background-color: #900C3F;
         border-radius: 4px;
         transition-duration: 0.015s;
+        text-shadow: 0px 7px 9px rgba(81,14,14,0.52);
       }
     }
   }
@@ -72,6 +73,7 @@ body {
       border-radius: 40px;
       transform: scale(1.06);
       transition-duration: 0.05s;
+      text-shadow: 0px 7px 9px rgba(143,92,15,0.56);
     }
   }
 }
@@ -106,8 +108,19 @@ body {
   box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
 }
 
+.flash-container {
+  text-align: center;
+  font: 600 16px/18px 'Manrope', sans-serif;
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  color: #303030;
+  text-decoration: underline;
+  text-shadow: 0px 3px 6px #BABABA;
+}
+
 // SIGN-IN PAGE -------------------------------------------//
-.signin-container {
+.signin-container, .signup-container {
   width: 60%;
   height: 50%;
   position: relative;
@@ -122,7 +135,7 @@ body {
   font-family: 'Manrope', sans-serif;
   border: 1px solid #7E0B37;
 }
-.signin-form {
+.signin-form{
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -146,6 +159,110 @@ body {
     text-align: center;
     label {
       text-align: left !important;
+    }
+  }
+  p {
+    font: 18px/18px;
+  }
+}
+
+// JOIN PAGE ------------------------------------//
+.signup-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  height: 80%;
+  width: 90%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.signup-graphic {
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  background-image: image-url('signup-discoball');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.signup-form {
+  width: 55%;
+  padding: 25px;
+  text-align: left;
+  h1 {
+    font: 300 52px/52px 'Baloo Bhaina 2';
+    color: #404040;
+  }
+  p {
+    font: 300 21px/21px 'Manrope';
+    line-height: 1.5;
+    color: #606060;
+  }
+  form {
+    padding: 10px 10px 10px 0px;
+    text-align: left;
+    border-top: 1px solid #F1BFCE;
+    border-top-style: dotted;
+    label {
+      display: inline-block;
+      color: #808080;
+      font: 300 16px/16px "Manrope";
+      margin-right: 5px;
+    }
+    .form-control {
+      display: inline-block;
+      width: 70%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 3px solid #EA9FB5;
+      box-shadow: none;
+      outline: none;
+      border-radius: 0;
+      margin-top: 15px;
+      margin-bottom: 40px;
+      font: 300 20px/20px 'Manrope';
+      padding-left: 5px;
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid #CE2052;
+      }
+    }
+    .btn {
+      display: block;
+      height: 60px;
+      width: 200px;
+      border-radius: 4px;
+      position: relative;
+      background-color: #7E0B37;
+      font: 500 24px/24px 'Baloo Bhaina 2';
+      color: white;
+      padding: 15px 16px;
+      transition-duration: 0.03s;
+      &:hover {
+        background-color: #ffa41b !important;
+        color: #900C3F !important;
+        font-weight: 600;
+        border-radius: 4px;
+        transform: scale(1.06);
+        transition-duration: 0.05s;
+        text-shadow: 0px 7px 9px rgba(143,92,15,0.56);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .disclaimer {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+    color: #808080;
+    a {
+      color: #EA9FB5;
     }
   }
 }
