@@ -17,6 +17,7 @@ body {
   background-image: image-url('food.png');
 }
 
+// NAV BAR --------------------------------------------------------//
 .home-card {
   position: relative;
   top: 50%;
@@ -96,6 +97,7 @@ body {
   }
 }
 
+// HOME PAGE CONTAINER ---------------------------------------------------------//
 .home-page-container {
   height: 100%;
   width: 100%;
@@ -137,6 +139,8 @@ body {
   font-family: 'Manrope', sans-serif;
   border: 1px solid #7E0B37;
 }
+
+// SIGN-IN PAGE ---------------------------------------------//
 .signin-form{
   width: 100%;
   height: auto;
@@ -171,20 +175,21 @@ body {
 // JOIN PAGE ------------------------------------//
 .signup-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: start;
-  height: 80%;
+  height: 90%;
   width: 90%;
   overflow: hidden;
   overflow-y: scroll;
+  background-color: #fafbfd;
 }
 
 .signup-graphic {
   width: 45%;
   height: 100%;
   text-align: center;
-  background-image: image-url('signup-discoball');
+  background-image: image-url('iso-party');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -192,19 +197,20 @@ body {
 
 .signup-form {
   width: 55%;
-  padding: 25px;
+  padding: 25px 10px 25px 25px;
   text-align: left;
   h1 {
-    font: 300 52px/52px 'Baloo Bhaina 2';
+    font: 300 50px/50px 'Baloo Bhaina 2';
     color: #404040;
   }
   p {
     font: 300 21px/21px 'Manrope';
     line-height: 1.5;
     color: #606060;
+    margin-bottom: 20px;
   }
   form {
-    padding: 10px 10px 10px 0px;
+    padding: 20px 10px 10px 0px;
     text-align: left;
     border-top: 1px solid #F1BFCE;
     border-top-style: dotted;
@@ -265,6 +271,62 @@ body {
     color: #808080;
     a {
       color: #EA9FB5;
+    }
+  }
+}
+
+// HOME/WELCOME PAGE ---------------------------------------------//
+.welcome-container {
+  width: 90%;
+  height: 90%;
+  justify-content: space-between;
+}
+
+.welcome-graphic {
+  background-image: image-url('iso-party-join');
+  width: 55%;
+}
+
+.welcome-info {
+  display: flex;
+  height: 100%;
+  width: 45%;
+  flex-direction: column;
+  justify-content: start;
+  padding: 80px 0 20px 20px;
+  h1 {
+    font: 500 50px/50px 'Baloo Bhaina 2';
+    margin-bottom: 20px;
+  }
+  p {
+    font: 300 24px/32px 'Manrope';
+    margin: 10px 0 30px 0;
+  }
+  .welcome-signup-btn {
+    display: block;
+    height: 60px;
+    width: 200px;
+    border-radius: 4px;
+    position: relative;
+    background-color: #7E0B37;
+    font: 500 24px/24px 'Baloo Bhaina 2';
+    text-align: center;
+    color: white;
+    padding: 18px 16px;
+    transition-duration: 0.03s;
+    margin-top: 20px;
+    &:hover {
+      text-decoration: none;
+      background-color: #ffa41b !important;
+      color: #900C3F !important;
+      font-weight: 600;
+      border-radius: 4px;
+      transform: scale(1.06);
+      transition-duration: 0.05s;
+      text-shadow: 0px 7px 9px rgba(143,92,15,0.56);
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
