@@ -4,8 +4,8 @@
     <li>
       <h2><%= link_to(event.name, event_path(event))%></h2>
       <div>
-        <p>Created <%= distance_of_time_in_words(event.creator.created_at, event.created_at)%> ago</p>
-        <p>Host: <%= event.creator.name %></p>
+        <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+        <p>Host: <%= event.creator.name.capitalize %></p>
       </div>
     </li>
   </div>

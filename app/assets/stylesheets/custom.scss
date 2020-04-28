@@ -551,6 +551,69 @@ body {
   }
 }
 
+// EVENT SHOW PAGE ------------------------------------------//
+.event-main {
+  position: relative;
+  h1 {
+    margin-top: 40px;
+  }
+}
+
+.event-main-nav {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #EA9FB5;
+  border: 1px solid #CE2052;
+  padding: 8px 16px;
+  font: 600 14px/14px 'Manrope';
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(69,8,8,1);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(69,8,8,1);
+  box-shadow: 0px 2px 10px 1px rgba(69,8,8,1);
+  a {
+    color: #404040;
+    &:hover {
+      color: #CE2052;
+      text-decoration: none;
+    }
+  }
+}
+
+.event-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+  height: 60%;
+  width: 90%;
+  background-color: #fafbfd;
+  background-image: image-url('cream-pixels');
+  border-radius: 15px;
+  border: 3px solid #ffa41b;
+  padding: 20px;
+  -webkit-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  -moz-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+}
+
+.event-main-host {
+  background-color: #EA9FB5;
+  padding: 8px 16px;
+  border-right: 2px solid #404040;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  h2 {
+    margin: 0;
+    font: 400 32px/32px 'Manrope';
+  }
+  a {
+    color: #404040;
+    font-weight: 500;
+  }
+}
+
 // USER SHOW PAGE -------------------------------------------//
 .user-show-container {
   position: relative;
