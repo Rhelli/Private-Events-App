@@ -1,9 +1,15 @@
 <header class="navbar navbar-fixed-top site-nav">
   <div>
     <nav>
+    <% if !logged_in? %>
       <%= link_to root_path, class: "navbar-brand nav-logo brand" do %>
         <%= image_tag "logo.png" %> Private Events
       <% end %>
+    <% else %>
+      <%= link_to events_path, class: "navbar-brand nav-logo brand" do %>
+        <%= image_tag "logo.png" %> Private Events
+      <% end %>
+    <% end %>
       <ul class="navbar-nav nav navbar-left justify-content-start">
         <% if !logged_in? %>
           <li><%= link_to "Events", events_path %></li>
@@ -26,7 +32,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown">My Profile<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Settings", "#" %></li>
+              <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Sign Out", signout_path, method: :delete, id: "dropdown-link" %></li>
             </ul>
           </li>

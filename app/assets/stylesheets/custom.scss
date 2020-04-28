@@ -173,7 +173,7 @@ body {
   -moz-box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
   box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
   font-family: 'Manrope', sans-serif;
-  border: 1px solid #7E0B37;
+  border: 3px solid #ffa41b;
 }
 
 // SIGN-IN PAGE ---------------------------------------------//
@@ -183,7 +183,8 @@ body {
   overflow: hidden;
   text-align: center;
   h2 {
-    font: 600 24px/24px;
+    font: 400 40px/40px 'Baloo Bhaina 2';
+    margin-top: 50px;
     margin-bottom: 35px;
     text-align: center;
   }
@@ -199,12 +200,53 @@ body {
   }
   form {
     text-align: center;
-    label {
-      text-align: left !important;
+    textarea, input {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-radius: 0;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    .form-control {
+      box-shadow: none !important;
+      border-bottom: 2px dotted #EA9FB5;
+      font: 300 20px/20px 'Manrope';
+      &:focus {
+        border-bottom: 2px dotted #CE2052;
+      }
+      margin-bottom: 20px;
     }
   }
   p {
-    font: 18px/18px;
+    font: 400 18px/18px 'Manrope';
+    transition-duration: 0.2s;
+    margin-top: 15px;
+    a {
+      color: #900C3F;
+      &:hover {
+        color: #ffa41b;
+        transition-duration: 0.15s;
+      }
+    }
+  }
+  .signin-btn {
+    height: 50px;
+    background-color: #7E0B37;
+    color: #fafbfd;
+    font: 500 22px/22px 'Baloo Bhaina 2';
+    padding: 14px 16px;
+    transition-duration: 0.2s;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    &:hover {
+      background-color: #C70039;
+      color: #ffa41b;
+      transform: scale(1.02);
+      transition-duration: 0.15s;
+    }
   }
 }
 
