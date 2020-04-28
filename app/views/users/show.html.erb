@@ -1,7 +1,7 @@
 <div class="container event-container user-show-container">
   <div class="user-event-counter">
     <p><%= @user.events.count %></p>
-    <p>upcoming events</p>
+    <p>upcoming <%= 'event'.pluralize(@user.events.count) %></p>
   </div>
   <h1>Your Events</h1>
   <ul>
