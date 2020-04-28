@@ -1,4 +1,8 @@
-<div class="container event-container">
+<div class="container event-container user-show-container">
+  <div class="user-event-counter">
+    <p><%= @user.events.count %></p>
+    <p>upcoming events</p>
+  </div>
   <h1>Your Events</h1>
   <ul>
     <% @user.events.each do |event| %>
