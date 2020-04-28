@@ -555,8 +555,9 @@ body {
 .event-main {
   position: relative;
   h1 {
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 15px;
+    max-width: 80%;
   }
 }
 
@@ -659,7 +660,8 @@ body {
   position: relative;
 }
 
-.user-event-counter {
+.user-event-counter,
+.user-invitation-counter {
   display: flex;
   justify-content: start;
   align-content: center;
@@ -692,4 +694,8 @@ body {
     font: 400 18px/18px 'Manrope';
     padding: 0px 6px;
   }
+}
+
+.user-invitation-counter {
+  top: 60px;
 }
