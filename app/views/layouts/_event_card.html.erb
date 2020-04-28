@@ -1,0 +1,13 @@
+<ul>
+  <% @events.each do |event| %>
+  <div class="event-card">
+    <li>
+      <h2><%= link_to(event.name, event_path(event))%></h2>
+      <div>
+        <p>Created <%= distance_of_time_in_words(event.creator.created_at, event.created_at)%> ago</p>
+        <p>Host: <%= event.creator.name %></p>
+      </div>
+    </li>
+  </div>
+  <% end %>
+</ul>

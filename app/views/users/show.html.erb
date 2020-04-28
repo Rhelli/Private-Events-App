@@ -1,25 +1,15 @@
-<div style="text-align:center;">
-  <div>
-    <p>Welcome, <%= @user.name %></p>
-  </div>
-  <div>
-    <h2>Your Events</h2>
-    <ul>
-      <% @user.events.each do |event| %>
+<div class="container event-container">
+  <h1>Your Events</h1>
+  <ul>
+    <% @user.events.each do |event| %>
+      <div class="event-card">
         <li>
-          <p><%= event.name %></p>
-          <p><%= event.created_at %></p>
+          <h2><%= link_to(event.name, event_path(event)) %></h2>
+          <div>
+            <p>Created <%= distance_of_time_in_words(event.creator.created_at, event.created_at)%> ago</p>
+          </div>
         </li>
-      <% end %>
-    </ul>
-  </div>
-  <div>
-    <%= link_to "Sign Out", signout_path, method: :delete %>
-  </div>
-  <div>
-    <p>******</p>
-  </div>
-  <div>
-    <%= link_to "Create a new event", new_event_path %>
-  </div>
+      </div>
+    <% end %>
+  </ul>
 </div>
