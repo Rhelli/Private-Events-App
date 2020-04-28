@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name].downcase)
     if user
       log_in(user)
-      flash[:success] = 'You have been logged in.'
+      flash[:success] = "Welcome back #{user.name}!"
       redirect_to user
     else
       flash[:danger] = "This name is not in our system. Please try again."

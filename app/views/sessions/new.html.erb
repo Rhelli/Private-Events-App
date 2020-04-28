@@ -1,14 +1,13 @@
-<h1>Sign In</h1>
-
-<div>
-  <div>
+<div class="container signin-container">
+  <div class="signin-form d-flex justify-content-center">
+    <h2>Welcome Back!</h2>
     <%= form_for(:session, url: signin_path) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
 
-      <%= f.submit "Sign In" %>
+      <%= f.label :name, class: 'text-left hidden' %>
+      <%= f.text_field :name, placeholder: 'Enter Your Name', class: 'form-control' %>
+
+      <%= f.submit "Sign In", class: 'signup-btn btn signin-btn' %>
     <% end %>
-    <hr/>
-    <p>New User? <%= link_to "Sign up Now!", signup_path %>
+    <p>New User? &nbsp; <%= link_to "Sign up Now!", signup_path %>
   </div>
 </div>

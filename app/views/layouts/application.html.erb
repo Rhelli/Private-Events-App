@@ -10,14 +10,16 @@
   </head>
 
   <body>
-  <% if logged_in? %>
-    <header style="text-align:right;">
-      <p>You are logged in</p>
-    </header
-  <% end %>
-  <% flash.each do |message_type, message| %>
-    <%= content_tag(:div, message) %>
-  <% end %>
-    <%= yield %>
+    <div class="home-card d-flex justify-content-center align-items-center">
+    <div class="flash-container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message) %>
+      <% end %>
+    </div>
+      <%= render 'layouts/site_nav' %>
+      <div class="home-page-container">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
