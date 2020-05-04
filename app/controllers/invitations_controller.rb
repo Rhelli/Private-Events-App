@@ -41,7 +41,7 @@ class InvitationsController < ApplicationController
   end
 
   def rsvp_params
-    params.require(:response)
+    params.require(:response) 
   end
 
 end
