@@ -40,4 +40,8 @@ class InvitationsController < ApplicationController
     params.require(:invitation).permit(:event_attendee_id, :invited_to_event_id)
   end
 
+  def rsvp_params
+    params.require(:response)
+  end
+
 end
