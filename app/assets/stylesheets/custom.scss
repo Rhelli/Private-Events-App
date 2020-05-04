@@ -17,6 +17,21 @@ body {
   background-image: image-url('food.png');
 }
 
+.label-subtitle {
+  width: auto;
+  position: relative;
+  font: 300 32px/32px 'Baloo Bhaina 2';
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #404040;
+  padding: 12px 14px;
+  border-radius: 2px;
+  border-right: 2px solid #7E0B37;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  -moz-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+}
+
 // NAV BAR --------------------------------------------------------//
 .home-card {
   position: relative;
@@ -507,13 +522,13 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  height: 40%;
-  width: 60%;
+  height: 60%;
+  width: 80%;
   background-color: #fafbfd;
   border: 3px solid #ffa41b;
   border-radius: 8px;
   p {
-    font: 300 20px/24px 'Manrope';
+    font: 300 22px/24px 'Manrope';
   }
   form {
     input[type=text] {
@@ -555,7 +570,6 @@ body {
 .event-main {
   position: relative;
   h1 {
-    margin-top: 10px;
     margin-bottom: 15px;
     max-width: 80%;
   }
@@ -678,12 +692,17 @@ body {
   -webkit-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
   -moz-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
   box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  p {
+    width: 44px;
+    height: 44px;
+  }
   p:first-child {
-    font: 500 34px/20px 'Baloo Bhaina 2';
+    font: 500 28px/28px 'Baloo Bhaina 2';
     border: 3px solid #ffa41b;
     border-radius: 50%;
-    padding: 12px 12px 4px 12px;
     margin: 0;
+    text-align: center;
+    padding: 8px 10px;
     -webkit-box-shadow: inset 0px 1px 13px -6px rgba(89,89,89,1);
     -moz-box-shadow: inset 0px 1px 13px -6px rgba(89,89,89,1);
     box-shadow: inset 0px 1px 13px -6px rgba(89,89,89,1);
@@ -692,10 +711,62 @@ body {
     position: relative;
     top: 3px;
     font: 400 18px/18px 'Manrope';
-    padding: 0px 6px;
+    padding: 12px 6px;
   }
 }
 
-.user-invitation-counter {
-  top: 60px;
+.user-event-counter {
+  right: 170px;
+  p:last-child {
+    padding: 4px 4px;
+  }
+}
+
+.user-events-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: start;
+  width: 100%;
+  text-align: center;
+  .event-card {
+    h2 {
+      font-size: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-left: 8px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.user-all-events {
+  width: 33%;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  .label-subtitle {
+    background-color: #EA9FB5;
+    position: relative;
+    width: 300px;
+  }
+  ul {
+    background-color: #fafbfd;
+  }
+}
+
+.user-event-invitations {
+  width: 30%;
+  .label-subtitle {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+  }
 }

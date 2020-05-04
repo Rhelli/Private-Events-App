@@ -7,17 +7,52 @@
     <p><%= @user.invitations.count %></p>
     <p><%= 'invitation'.pluralize(@user.invitations.count) %></p>
   </div>
-  <h1>Your Events</h1>
-  <ul>
-    <% @user.events.each do |event| %>
-      <div class="event-card">
-        <li>
-          <h2><%= link_to(event.name, event_path(event)) %></h2>
-          <div>
-            <p>Created <%= distance_of_time_in_words(event.creator.created_at, event.created_at)%> ago</p>
+  <h1>My Events</h1>
+  <div class="user-events-container">
+    <div class="user-all-events">
+      <h2 class="label-subtitle">Upcoming Events</h2>
+      <ul>
+        <% @user.events.each do |event| %>
+          <div class="event-card">
+            <li>
+              <h2><%= link_to(event.name, event_path(event)) %></h2>
+              <div>
+                <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+              </div>
+            </li>
           </div>
-        </li>
-      </div>
-    <% end %>
-  </ul>
+        <% end %>
+      </ul>
+    </div>
+    <div class="user-event-invitations">
+      <h2 class="label-subtitle">Event Invitations</h2>
+      <ul>
+        <% @user.invitations.each do |invitation| %>
+          <div class="event-card">
+            <li>
+              <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
+              <div>
+                <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
+              </div>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    <div class="user-past-events">
+      <h2 class="label-subtitle">Event Invitations</h2>
+      <ul>
+        <% @user.invitations.each do |invitation| %>
+          <div class="event-card">
+            <li>
+              <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
+              <div>
+                <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
+              </div>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
