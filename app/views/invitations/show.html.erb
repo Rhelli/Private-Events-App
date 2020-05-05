@@ -8,7 +8,7 @@
     <div class="invitation-event-desc">
       <h2><%= @event.name %></h2>
       <div>
-        <h3>You have cordially been invited to join the 'Coronavirus Event', hosted by Rory.</h3>
+        <h3>You have cordially been invited to join the "<%= @event.name %>" event, hosted by <%= @event.creator.name %></h3>
         <p>This Coronavirus event is held to celebrate the pain that it is to work from home and not be allowed out to see your friends!
           Over the course of the evening, we will be hosting Zoom meetings to try and simulate human interaction. BYOB. Black-tie dress code.</p>
         <p>To RSVP for this event, please confirm below whether you will be attending or not.</p>

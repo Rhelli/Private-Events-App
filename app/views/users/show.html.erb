@@ -10,49 +10,61 @@
   <h1>My Events</h1>
   <div class="user-events-container">
     <div class="user-all-events">
-      <h2 class="label-subtitle">Upcoming Events</h2>
-      <ul>
-        <% @upcoming_events.each do |event| %>
-          <div class="event-card">
-            <li>
-              <h2><%= link_to(event.name, event_path(event)) %></h2>
-              <div>
-                <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+        <div>
+          <h2 class="label-subtitle">Upcoming Events</h2>
+        </div>
+        <div class="user-events-lists">
+          <ul>
+            <% @upcoming_events.each do |event| %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(event.name, event_path(event)) %></h2>
+                  <div>
+                    <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+                  </div>
+                </li>
               </div>
-            </li>
-          </div>
-        <% end %>
-      </ul>
+            <% end %>
+          </ul>
+        </div>
     </div>
     <div class="user-event-invitations">
-      <h2 class="label-subtitle">Event Invitations</h2>
-      <ul>
-        <% @user.invitations.each do |invitation| %>
-          <div class="event-card">
-            <li>
-              <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
-              <div>
-                <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
+        <div>
+          <h2 class="label-subtitle">Event Invitations</h2>
+        </div>
+        <div class="user-events-lists">
+          <ul>
+            <% @user.invitations.each do |invitation| %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
+                  <div>
+                    <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
+                  </div>
+                </li>
               </div>
-            </li>
-          </div>
-        <% end %>
-      </ul>
+            <% end %>
+          </ul>
+        </div>
     </div>
     <div class="user-past-events">
-      <h2 class="label-subtitle">Past Events</h2>
-      <ul>
-        <% @past_events.each do |past_event| %>
-          <div class="event-card">
-            <li>
-              <h2><%= link_to(past_event.name, event_path(event)) %></h2>
-              <div>
-                <p>This event ended <%= time_ago_in_words(event.event_date)%> ago</p>
+        <div>
+          <h2 class="label-subtitle">Past Events</h2>
+        </div>
+        <div class="user-events-lists">
+          <ul>
+            <% @past_events.each do |past_event| %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(past_event.name, event_path(event)) %></h2>
+                  <div>
+                    <p>This event ended <%= time_ago_in_words(event.event_date)%> ago</p>
+                  </div>
+                </li>
               </div>
-            </li>
-          </div>
-        <% end %>
-      </ul>
+            <% end %>
+          </ul>
+        </div>
     </div>
   </div>
 </div>
