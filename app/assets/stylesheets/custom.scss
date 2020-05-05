@@ -1,8 +1,9 @@
 //@import '@fortawesome/fontawesome-free';
-@import url(https://fonts.googleapis.com/css?family=Baloo+Bhaina+2:regular,500,600,700,800);
-@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import url(https://fonts.googleapis.com/css?family=Baloo+Bhaina+2:regular,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular);
 
 html, body {
   width: 100vw;
@@ -15,6 +16,10 @@ html, body {
 body {
   background-color: #c70039;
   background-image: image-url('food.png');
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-align: left;
+  margin: auto;
 }
 
 .label-subtitle {
@@ -514,7 +519,6 @@ body {
   justify-content: start;
   height: 100%;
   width: 100%;
-  margin-top: 20px;
 }
 
 .event-creation-form {
@@ -577,8 +581,7 @@ body {
 
 .event-main-nav {
   position: absolute;
-  top: -15px;
-  left: 12px;
+  left: 10px;
   background-color: transparent;
   font-size: 48px;
   border-radius: 4px;
@@ -681,7 +684,7 @@ body {
   align-content: center;
   align-items: center;
   position: absolute;
-  top: -8px;
+  top: 15px;
   right: 10px;
   height: 44px;
   width: 145px;
@@ -768,5 +771,137 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 300px;
+  }
+}
+
+// INVITATION SHOW PAGE ----------------------------------------------//
+.invitation-show-container {
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  .event-main-nav {
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.invitation-card-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-image: none;
+}
+
+.invitation-event-desc {
+  display: block;
+  width: 90%;
+  height: 95%;
+  background-color: #11C79F;
+  background-image: image-url('corrugation');
+  border-radius: 3px;
+  border: 1px solid #0FAE8B;
+  -webkit-box-shadow: 0px 2px 15px -1px rgba(4,50,40,1);
+  -moz-box-shadow: 0px 2px 15px -1px rgba(4,50,40,1);
+  box-shadow: 0px 2px 15px -1px rgba(4,50,40,1);
+  text-align: center;
+  padding: 10px;
+  color: #fafbfd;
+  h2 {
+    font: 700 62px/62px 'Petit Formal Script';
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  }
+  h3 {
+    font: 400 24px/32px 'Petit Formal Script';
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  p {
+    font: 500 16px/20px 'Manrope';
+    margin-bottom: 20px;
+  }
+}
+
+.rsvp-box {
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  height: 30%;
+  background-color: #0FAE8B;
+  background-image: inherit;
+  border-radius: 8px;
+  border: 1px solid #2FCEAB;
+  -webkit-box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
+  -moz-box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
+  box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
+}
+
+.rsvp-check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #0B7C63;
+    -webkit-box-shadow: inset 0px 0px 8px 0px rgba(6,75,60,1);
+    -moz-box-shadow: inset 0px 0px 8px 0px rgba(6,75,60,1);
+    box-shadow: inset 0px 0px 8px 0px rgba(6,75,60,1);
+    background-image: inherit;
+
+    border-radius: 4px;
+  }
+  &:hover input ~ .checkmark {
+    background-color: #0FAE8B;
+  }
+  input:checked ~ .checkmark {
+    background-color: #0FAE8B;
+    -webkit-box-shadow: inset 0px 0px 16px 0px rgba(13,149,119,1);
+    -moz-box-shadow: inset 0px 0px 16px 0px rgba(13,149,119,1);
+    box-shadow: inset 0px 0px 16px 0px rgba(13,149,119,1);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid red;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
 }
