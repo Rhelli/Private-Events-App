@@ -844,8 +844,14 @@ body {
   box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
 }
 
+.invite-checkline {
+  margin-top: 10px;
+}
+
 .rsvp-check-container {
-  display: block;
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -864,7 +870,7 @@ body {
   }
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 4px;
     left: 0;
     height: 25px;
     width: 25px;
@@ -873,35 +879,21 @@ body {
     -moz-box-shadow: inset 0px 0px 8px 0px rgba(6,75,60,1);
     box-shadow: inset 0px 0px 8px 0px rgba(6,75,60,1);
     background-image: inherit;
-
     border-radius: 4px;
+    transition-duration: 0.2s;
   }
   &:hover input ~ .checkmark {
     background-color: #0FAE8B;
+    transition-duration: 0.1s;
+    transform: scale(1.01);
   }
   input:checked ~ .checkmark {
-    background-color: #0FAE8B;
-    -webkit-box-shadow: inset 0px 0px 16px 0px rgba(13,149,119,1);
-    -moz-box-shadow: inset 0px 0px 16px 0px rgba(13,149,119,1);
-    box-shadow: inset 0px 0px 16px 0px rgba(13,149,119,1);
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  input:checked ~ .checkmark:after {
-    display: block;
-  }
-  .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid red;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    background-image: linear-gradient( 113.1deg,  rgba(255,205,129,1) 1%, rgba(255,164,27,1) 93.1% );
+    background-color: #ffa41b;
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    border: 1px solid #ffa41b;
+    transition-duration: 0.2s;
   }
 }
