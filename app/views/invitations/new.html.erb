@@ -4,9 +4,26 @@
       <i class="fas fa-arrow-circle-left"></i>
     <% end %>
   </div>
-  <div class="event-main-container invitation-card-container">
-    <div class="invitation-event-desc">
-      <h2><%= @invitation.invited_to_event %></h2>
+  <div class="event-main-container invitation-card-container invitation-new-card">
+    <div class="invitation-event-desc new-invite-main">
+      <h2>New Invitation</h2>
+      <div class="invite-form">
+        <%= form_for(@invitation) do |f| %>
+          <div class="new-invite-form-fields">
+            <div class="row">
+              <%= f.label :invited_to_event_id, "Which event is the invitation for?" %>
+              <%= f.collection_select :invited_to_event, Event.all, :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
+            </div>
+
+            <div class="row">
+              <%= f.label :event_attendee_id, "Who would you like to invite?" %>
+              <%= f.collection_select :event_attendee_id, User.where.not(id: @invitation.inviter), :id, :name, prompt: true, selected: @invitation.event_attendee, class: 'form-control' %>
+            </div>
+          </div>          
+
+          <%= f.submit %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

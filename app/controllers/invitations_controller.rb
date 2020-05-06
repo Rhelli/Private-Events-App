@@ -1,15 +1,15 @@
 class InvitationsController < ApplicationController
-  before_action :fetch_invite, only: [:show, :update, :destroy]
+  before_action :fetch_invite, only: [:show, :update, :destroy, :new]
 
   def new
-    @invitation = Invitation.new
+    @invitation = current_user.invitations.new
   end
 
   def create
-    @invitation = Invitation.new(invitation_params)
+    @invitation = current_user.invitations.new(invitation_params)
     if @invitation.save
       flash[:success] = "Your invitation has been sent."
-      redirect_to event_path(@invitation.invited_to_event)
+      respond_with(@invitation)
     else
       render 'new'
     end
