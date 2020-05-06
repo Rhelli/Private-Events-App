@@ -1,0 +1,12 @@
+<div class="container event-container event-main invitation-new-container">
+  <div class="event-main-nav">
+    <%= link_to events_path do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </div>
+  <div class="event-main-container invitation-card-container">
+    <div class="invitation-event-desc">
+      <h2><%= @invitation.invited_to_event %></h2>
+    </div>
+  </div>
+</div>

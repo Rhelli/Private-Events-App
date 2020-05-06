@@ -5,6 +5,11 @@
     <% end %>
   </div>
   <h1><%= @event.name %></h1>
+  <% if current_user == @event.creator %>
+    <div class="event-main-host new-invite">
+      <h2><%= link_to("Invite Guests", new_invitation_path) %></h2>
+    </div>
+  <% end %>
   <div class="event-main-host">
     <h2>Hosted by: <%= link_to(@event.creator.name.capitalize, users_path(@user)) %> 🎉 </h2>
   </div>

@@ -1,6 +1,6 @@
 <div class="container event-container user-show-container">
   <div class="user-event-counter">
-    <p><%= @user.events.count %></p>
+    <p><%= @user.upcoming_events.count %></p>
     <p>upcoming <%= 'event'.pluralize(@user.events.count) %></p>
   </div>
   <div class="user-invitation-counter">
@@ -53,10 +53,10 @@
         </div>
         <div class="user-events-lists">
           <ul>
-            <% @past_events.each do |past_event| %>
+            <% @past_events.each do |event| %>
               <div class="event-card">
                 <li>
-                  <h2><%= link_to(past_event.name, event_path(event)) %></h2>
+                  <h2><%= link_to(event.name, event_path(event)) %></h2>
                   <div>
                     <p>This event ended <%= time_ago_in_words(event.event_date)%> ago</p>
                   </div>

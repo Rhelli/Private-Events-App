@@ -623,6 +623,46 @@ body {
   }
 }
 
+.new-invite {
+  position: absolute !important;
+  top: 105px;
+  right: 60px;
+  background-color: #0FAE8B !important;
+  border-top: 1px solid #1D816B;
+  border-left: 1px solid #1D816B;
+  border-bottom: 1px solid #1D816B;
+  -webkit-box-shadow: 0px 2px 9px -1px rgba(7,69,53,1);
+  -moz-box-shadow: 0px 2px 9px -1px rgba(7,69,53,1);
+  box-shadow: 0px 2px 9px -1px rgba(7,69,53,1);
+  transition-duration: 0.2s;
+  h2 {
+    a {
+      color: white;
+      font-weight: 600;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &:hover {
+    background-image: linear-gradient( 113.1deg,  rgba(255,205,129,1) 1%, rgba(255,164,27,1) 93.1% );
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    border: 1px solid #ffa41b;
+    border-right: 2px solid #202020;
+    -webkit-box-shadow: 0px 2px 12px -3px rgba(209,58,73,1);
+    -moz-box-shadow: 0px 2px 12px -3px rgba(209,58,73,1);
+    box-shadow: 0px 2px 12px -3px rgba(209,58,73,1);
+    transition-duration: 0.15s;
+    h2 {
+      a {
+        color: #404040;
+      }
+    }
+  }
+}
+
 .event-users {
   width: auto;
 }
@@ -676,6 +716,9 @@ body {
 .user-show-container {
   position: relative;
   padding: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 .user-event-counter,
@@ -733,7 +776,7 @@ body {
   align-content: center;
   align-items: start;
   width: 100%;
-  height: 100%;
+  height: 85%;
   text-align: center;
   .event-card {
     width: 100%;
@@ -759,6 +802,8 @@ body {
   align-content: center;
   align-items: center;
   height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .user-events-lists {
@@ -931,6 +976,17 @@ body {
         transition-duration: 0.2s;
       }
     }
+  }
+}
+
+// INVITATION NEW CONTAINER ------------------------------------------------//
+.invitation-new-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .event-main-nav {
+    top: 0px;
   }
 }
 
