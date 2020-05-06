@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
     @invitation = current_user.invitations.new(invitation_params)
     if @invitation.save
       flash[:success] = "Your invitation has been sent."
-      respond_with(@invitation)
+      respond_with(@invitation) 
     else
       render 'new'
     end
