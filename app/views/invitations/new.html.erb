@@ -12,16 +12,16 @@
           <div class="new-invite-form-fields">
             <div class="row">
               <%= f.label :invited_to_event_id, "Which event is the invitation for?" %>
-              <%= f.collection_select :invited_to_event, Event.all, :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
+              <%= f.collection_select :invited_to_event, Event.all.where.not(id: @event.creator.), :id, :name, prompt: true %>
             </div>
 
             <div class="row">
               <%= f.label :event_attendee_id, "Who would you like to invite?" %>
-              <%= f.collection_select :event_attendee_id, User.where.not(id: @invitation.inviter), :id, :name, prompt: true, selected: @invitation.event_attendee, class: 'form-control' %>
+              <%= f.collection_select :event_attendee_id, User.where.not(id: @current_user.id), :id, :name, prompt: true, selected: @invitation.event_attendee, class: 'form-control' %>
             </div>
           </div>          
 
-          <%= f.submit %>
+          <%= f.submit "Send Invitation", class: "new-invite-submit" %>
         <% end %>
       </div>
     </div>

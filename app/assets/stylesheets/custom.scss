@@ -526,7 +526,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  height: 60%;
+  height: auto;
   width: 80%;
   background-color: #fafbfd;
   border: 3px solid #ffa41b;
@@ -551,6 +551,17 @@ body {
       border-bottom: 2px dotted #CE2052;
     }
   }
+
+  .new-event-desc {
+    height: 120px;
+    outline: 2px dotted #EA9FB5;
+    border-bottom: none !important;
+    margin-top: 30px;
+    &:focus {
+      outline: 2px solid #CE2052;
+    }
+  }
+
   .event-create-btn {
     margin-top: 15px;
     height: 50px;
@@ -574,6 +585,7 @@ body {
 .event-main {
   position: relative;
   h1 {
+    text-align: center;
     margin-bottom: 15px;
     max-width: 80%;
   }
@@ -625,8 +637,9 @@ body {
 
 .new-invite {
   position: absolute !important;
-  top: 105px;
-  right: 60px;
+  width: 170px;
+  top: 0px;
+  left: 374px;
   background-color: #0FAE8B !important;
   border-top: 1px solid #1D816B;
   border-left: 1px solid #1D816B;
@@ -911,7 +924,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 40%;
-  height: 30%;
+  height: auto;
   background-color: #0FAE8B;
   background-image: inherit;
   border-radius: 8px;
@@ -1046,7 +1059,49 @@ body {
   select {
     width: 100%;
     height: 30px;
-    color: black;
+    color: #fafbfd;
+    font: 500 16px/16px 'Manrope';
+    text-align: center;
+    background-color: #0f9979;
+    background-image: image-url('corrugation');
+    border-radius: 8px;
+    border: 1px solid #10856a;
+    -webkit-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    -moz-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    &:focus {
+      outline: none;
+      -webkit-box-shadow: 0px 0px 12px -2px rgba(162,207,196,1);
+      -moz-box-shadow: 0px 0px 12px -2px rgba(162,207,196,1);
+      box-shadow: 0px 0px 12px -2px rgba(162,207,196,1);
+    }
+  }
+  .new-invite-submit {
+    color: #fafbfd;
+    width: 160px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #0f9979;
+    background-image: image-url('corrugation');
+    border-radius: 4px;
+    border: 1px solid #10856a;
+    -webkit-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    -moz-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    margin: 20px 0;
+    font: 700 18px/18px 'Manrope';
+    transition-duration: 0.2s;
+    &:hover {
+      background-image: linear-gradient( 113.1deg,  rgba(255,205,129,1) 1%, rgba(255,164,27,1) 93.1% );
+      -webkit-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      -moz-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      border: 1px solid #ffa41b;
+      color: #303030;
+      font: 700 18px/18px 'Manrope';
+      transition-duration: 0.15s;
+      transform: scale(1.01);
+    }
   }
 }
 
