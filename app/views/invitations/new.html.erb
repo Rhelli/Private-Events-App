@@ -12,12 +12,13 @@
           <div class="new-invite-form-fields">
             <div class="row">
               <%= f.label :invited_to_event_id, "Which event is the invitation for?" %>
-              <%= f.collection_select :invited_to_event, Event.all.where.not(id: @event.creator.), :id, :name, prompt: true %>
+              <%= f.collection_select :invited_to_event, Event.where(id: @created_events), :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
             </div>
 
             <div class="row">
               <%= f.label :event_attendee_id, "Who would you like to invite?" %>
-              <%= f.collection_select :event_attendee_id, User.where.not(id: @current_user.id), :id, :name, prompt: true, selected: @invitation.event_attendee, class: 'form-control' %>
+              <%= f.collection_select(:event_attendee_id, User.where.not(id: @current_user.id), :id, :name, {:prompt => 'Select who you like to invite'}, {:multiple => true}) %>
+              <%#= selected: @invitation.event_attendee, %>
             </div>
           </div>          
 
@@ -27,3 +28,8 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+$("#invitation_event_attendee_id").multiSelect();
+});
+</script>

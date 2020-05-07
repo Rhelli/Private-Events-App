@@ -3,6 +3,7 @@ class InvitationsController < ApplicationController
 
   def new
     @invitation = current_user.invitations.new
+    @created_events = Event.where.not("creator_id = ?", @current_user.id).order(name: :desc)
   end
 
   def create
@@ -48,7 +49,7 @@ class InvitationsController < ApplicationController
   end
 
   def fetch_invite
-    @invitation = Invitation.find_by(id: params[:id])
+    @invitation = Invitation.find_by(params[:id])
   end
 
 end

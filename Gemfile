@@ -25,6 +25,8 @@ gem 'font_awesome5_rails'
 gem 'faker'
 
 gem 'hirb'
+
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
