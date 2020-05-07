@@ -1,9 +1,10 @@
 class InvitationsController < ApplicationController
+  include SessionsHelper
   before_action :fetch_invite, only: [:show, :update, :destroy]
 
   def new
     @invitation = current_user.invitations.new
-    @created_events = Event.where.not("creator_id = ?", @current_user.id).order(name: :desc)
+    @created_events = Event.where("creator_id = ?", @current_user.id).order(name: :desc)
   end
 
   def create
@@ -13,7 +14,6 @@ class InvitationsController < ApplicationController
       redirect_to event_path
     else
       flash[:danger] = "These users have already been invited."
-      render 'new'
     end
   end
 
@@ -42,7 +42,7 @@ class InvitationsController < ApplicationController
   private
 
   def invitation_params
-    params.require(:invitation).permit(:event_attendee_id, :invited_to_event_id)
+    params.require(:invitation).permit(:event_attendee, :invited_to_event)
   end
 
   def rsvp_params
