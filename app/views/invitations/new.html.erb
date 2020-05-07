@@ -12,7 +12,7 @@
           <div class="new-invite-form-fields">
             <div class="row">
               <%= f.label :invited_to_event_id, "Which event is the invitation for?" %>
-              <%= f.collection_select :invited_to_event, Event.where(id: @created_events), :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
+              <%= f.collection_select :invited_to_event_id, Event.where(id: @created_events), :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
             </div>
 
             <div class="row">

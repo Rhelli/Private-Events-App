@@ -1,5 +1,5 @@
 class InvitationsController < ApplicationController
-  before_action :fetch_invite, only: [:show, :update, :destroy, :new]
+  before_action :fetch_invite, only: [:show, :update, :destroy]
 
   def new
     @invitation = current_user.invitations.new
@@ -10,8 +10,9 @@ class InvitationsController < ApplicationController
     @invitation = current_user.invitations.new(invitation_params)
     if @invitation.save
       flash[:success] = "Your invitation has been sent."
-      respond_with(@invitation) 
+      redirect_to event_path
     else
+      flash[:danger] = "These users have already been invited."
       render 'new'
     end
   end
@@ -49,7 +50,7 @@ class InvitationsController < ApplicationController
   end
 
   def fetch_invite
-    @invitation = Invitation.find_by(params[:id])
+    @invitation = Invitation.find(params[:id])
   end
 
 end
