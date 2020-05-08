@@ -822,8 +822,6 @@ body {
   align-content: center;
   align-items: center;
   height: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
 }
 
 .user-events-lists {
@@ -843,6 +841,8 @@ body {
   padding-top: 10px;
   border-radius: 10px;
   border: 2px solid #C70039;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .user-all-events {

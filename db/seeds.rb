@@ -29,14 +29,15 @@ end
   )
 end
 
-100.times do
-  event_attendee_id = rand(1..30)
-  invited_to_event_id = rand(1..80)
-  rsvp = [true, true, true, true, false, false, false].sample
-  created_at = Faker::Time.between_dates(from: Date.today - 300, to: Date.today - 100, period: :day)
+invited_to_event_id = 0
+
+1.upto(80) do |i|
+  event_attendee_id = i
+  rsvp = [true, true, true, false].sample
+  created_at = Faker::Time.between_dates(from: Date.today - 100, to: Date.today - 10, period: :day)
   Invitation.create!(
     event_attendee_id: event_attendee_id,
-    invited_to_event_id: invited_to_event_id,
+    invited_to_event_id: event_attendee_id,
     rsvp: rsvp,
     created_at: created_at,
     updated_at: created_at
