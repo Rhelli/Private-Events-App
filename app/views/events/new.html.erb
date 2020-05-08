@@ -1,11 +1,17 @@
 <div class="container event-container">
   <h1>Create an Event</h1>
   <div class="signin-form event-creation-form">
-    <p>Create your very own event which you can invite friends and family to. All you need to get started is a name for the event!</p>
+    <p>Create your very own event which you can invite friends and family to. All you need to get started is a name and date for your event!</p>
     <%= form_for @event do |f| %>
 
       <%= f.label :name, class: 'hidden' %>
       <%= f.text_field :name, placeholder: 'What would you like to call your event?', class: 'form-control' %>
+
+      <%= f.label :event_date, class: 'hidden' %>
+      <%= f.datetime_field :event_date, class: 'form-control' %>
+
+      <%= f.label :description, class: 'hidden' %>
+      <%= f.text_area :description, class: 'form-control new-event-desc', placeholder: 'Enter a description for your event!' %>
 
       <%= f.submit 'Create Event', class: 'btn btn-primary event-create-btn' %>
 

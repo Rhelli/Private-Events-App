@@ -1,15 +1,39 @@
 <div class="container event-container event-main">
   <div class="event-main-nav">
-    <%= link_to "< Back to all events", events_path%>
+    <%= link_to events_path do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
   </div>
   <h1><%= @event.name %></h1>
+  <div class="event-main-host">
+    <h2>Hosted by: <%= link_to(@event.creator.name.capitalize, users_path(@user)) %> 🎉 </h2>
+    <% if current_user == @event.creator %>
+      <div class="event-main-host new-invite">
+        <h2><%= link_to("Invite Guests", new_invitation_path(@event)) %></h2>
+      </div>
+    <% end %>
+  </div>
   <div class="event-main-container">
-    <div class="event-main-host">
-      <h2>The creator and host of this event is: <%= link_to(@event.creator.name.capitalize, users_path(@user)) %> 🎉 </h2>
+    <div class="event-attending-title">
+      <h2>Attending</h2>
     </div>
-    <div class="event-main-info">
-    </div>
-    <div class="event-main-invited">
+    <div class="event-attending">
+      <div class="event-attending-list">
+        <ul>
+          <% @event.attendees.each do |attendee| %>
+          <% if attendee.nil? %>
+            <div>
+              <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
+            </div>
+          <% end %>
+          <div class="event-card">
+            <li>
+              <h2><%= link_to(attendee.name, user_path(attendee))%></h2>
+            </li>
+          </div>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

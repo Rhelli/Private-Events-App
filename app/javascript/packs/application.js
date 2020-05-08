@@ -6,9 +6,14 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
+require("jquery")
 require("channels")
 
+window.jQuery = $;
+window.$ = $;
+
 import './bootstrap_custom.js'
+import './jquery.multi-select.js'
 import '../../assets/stylesheets/application.css'
 import '@fortawesome/fontawesome-free/js/all'
 require.context('../../assets/images', true)

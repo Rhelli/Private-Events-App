@@ -29,6 +29,7 @@
           <li><%= link_to "Sign In", signin_path %></li>
           <li class="nav-join"><%= link_to "Join Today", signup_path %></li>
         <% else %>
+        <li class="logged-username"><%= @current_user.name %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown">My Profile<b class="caret"></b></a>
             <ul class="dropdown-menu">
