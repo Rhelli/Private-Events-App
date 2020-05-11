@@ -9,7 +9,8 @@ example_id                                           | status  | run_time       
 ./spec/helpers/sessions_helper_spec.rb[1:5:1]        | failed  | 0.00624 seconds |
 ./spec/helpers/static_pages_helper_spec.rb[1:1]      | pending | 0.00001 seconds |
 ./spec/helpers/users_helper_spec.rb[1:1]             | pending | 0.00001 seconds |
-./spec/models/event_spec.rb[1:1]                     | pending | 0.00001 seconds |
+./spec/models/event_spec.rb[1:1:1]                   | passed  | 0.01007 seconds |
+./spec/models/event_spec.rb[1:1:2]                   | passed  | 0.25516 seconds |
 ./spec/models/invitation_spec.rb[1:1]                | pending | 0.00001 seconds |
 ./spec/models/user_spec.rb[1:1:1]                    | passed  | 0.02568 seconds |
 ./spec/models/user_spec.rb[1:1:2]                    | passed  | 0.15911 seconds |
