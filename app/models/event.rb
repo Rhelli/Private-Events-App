@@ -3,4 +3,8 @@ class Event < ApplicationRecord
   has_many :invitations, foreign_key: :invited_to_event_id
   has_many :attendees, through: :invitations, source: :event_attendee
 
+  validates :name, presence: true, length: { maximum: 120 }
+  validates :event_date, presence: true
+  validates :description, presence: true, length: { maximum: 20000 }
+  validates :creator_id, presence: true
 end
