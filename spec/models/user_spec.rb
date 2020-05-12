@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    
+
+  let(:steve) { User.create!(name: 'Steve')}
+
   context 'Users names are formatted and validated' do
     it "saves the user's name to capitalized downcase" do
       user = User.create!(name: 'STEVE')
@@ -38,13 +40,13 @@ RSpec.describe User, type: :model do
 
   context 'Users events are sorted into upcoming and past events' do
     it 'Sorts events as upcoming if they are yet to happen' do
-      steve = User.create!(name: 'Steve')
+      steve
       Event.create!(name: 'Test Party', event_date: '2200-04-02 22:00:00 UTC', created_at: '2020-04-02 22:00:00 UTC', updated_at: '2020-04-02 22:00:00 UTC', creator_id: '1', description: 'blah blah' )
       expect(steve.upcoming_events).to_not be(nil)
     end
 
     it 'Sorts events as past if they have already happened' do
-      steve = User.create!(name: 'Steve')
+      steve
       Event.create!(name: 'Test Party', event_date: '2001-04-02 22:00:00 UTC', created_at: '2000-04-02 22:00:00 UTC', updated_at: '2000-04-02 22:00:00 UTC', creator_id: '1', description: 'blah blah' )
       expect(steve.upcoming_events).to_not be(nil)
     end
