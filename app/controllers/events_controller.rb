@@ -14,6 +14,7 @@ class EventsController < ApplicationController
       flash[:success] = "The '#{@event.name}' event has been created successfully!"
       redirect_to @event
     else
+      flash[:danger] = "An error occurred. Please make sure you fill out all fields."
       render 'new'
     end
   end
