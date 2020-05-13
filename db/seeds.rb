@@ -28,18 +28,3 @@ end
     description: description
   )
 end
-
-80.times do
-  attendee_array = (1..30).to_a.shuffle
-  event_attendee_id = attendee_array.first
-  rsvp = [true, true, true, false].sample
-  created_at = Faker::Time.between_dates(from: Date.today - 100, to: Date.today - 10, period: :day)
-  Invitation.create!(
-    event_attendee_id: event_attendee_id,
-    invited_to_event_id: event_attendee_id,
-    rsvp: rsvp,
-    created_at: created_at,
-    updated_at: created_at
-  )
-  attendee_array.delete(attendee_array.first)
-end
