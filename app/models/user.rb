@@ -9,10 +9,12 @@ class User < ApplicationRecord
 
   def upcoming_events
     self.events.where('event_date >= ?', Time.now).order(date: :asc)
+    self.invited_to_events.where('event_date >= ?', Time.now).order(date: :asc)
   end
 
   def past_events
     self.events.where('event_date < ?', Time.now).order(date: :desc)
+    self.invited_to_events.where('event_date < ?', Time.now).order(date: :desc)
   end
 
 end

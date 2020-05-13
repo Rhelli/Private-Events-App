@@ -1,6 +1,6 @@
 <div class="container event-container event-main invitation-show-container">
   <div class="event-main-nav">
-    <%= link_to user_path do %>
+    <%= link_to user_path(current_user.id) do %>
       <i class="fas fa-arrow-circle-left"></i>
     <% end %>
   </div>

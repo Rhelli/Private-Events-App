@@ -826,7 +826,7 @@ body {
 
 .user-events-lists {
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
@@ -842,6 +842,7 @@ body {
   border-radius: 10px;
   border: 2px solid #C70039;
   overflow: hidden;
+  overflow-y: hidden;
   overflow-y: scroll;
 }
 
