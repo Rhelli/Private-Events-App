@@ -5,7 +5,7 @@ RSpec.describe SessionsHelper, type: :helper do
 
   it 'stores the users name in the session cookie' do
     log_in user
-    expect(session[:name]).to eq("#{user.name}")
+    expect(session[:user_id]).to eq(current_user.id)
   end
 
   it 'sets the current user to the user' do
@@ -26,7 +26,7 @@ RSpec.describe SessionsHelper, type: :helper do
   context 'logs out user' do
     it 'deletes the session' do
       log_in user
-      log_out user
+      log_out
       expect(session[:name]).to be_nil
       expect(@current_user).to be_nil
     end
