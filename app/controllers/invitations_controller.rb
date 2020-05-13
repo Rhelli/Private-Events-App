@@ -1,19 +1,19 @@
 class InvitationsController < ApplicationController
   include SessionsHelper
-  before_action :fetch_invite, only: [:show, :update, :destroy]
+  before_action :fetch_invite, only: %i[show update destroy]
 
   def new
     @invitation = current_user.invitations.new
-    @created_events = Event.where("creator_id = ?", @current_user.id).order(name: :desc)
+    @created_events = Event.where('creator_id = ?', @current_user.id).order(name: :desc)
   end
 
   def create
     @invitation = current_user.invitations.new(invitation_params)
     if @invitation.save
-      flash[:success] = "Your invitation has been sent."
+      flash[:success] = 'Your invitation has been sent.'
       redirect_to event_path
     else
-      flash[:danger] = "These users have already been invited."
+      flash[:danger] = 'These users have already been invited.'
     end
   end
 
@@ -27,15 +27,15 @@ class InvitationsController < ApplicationController
       flash[:info] = "Invitation accepted! This event has been added to your 'Upcoming Events' list."
       redirect_to user_path
     else
-      @invitiation.declined
-      flash[:info] = "You have declined to attend this event. #{view_context.link_to("Go Back", @invitation)}".html_safe
+      @invitation.declined
+      flash[:info] = "You have declined to attend this event. #{view_context.link_to('Go Back', @invitation)}".html_safe
       redirect_to invitation_path(@invitation)
     end
   end
 
   def destroy
     @invitation.destroy
-    flash[:info] = "Invitation successfully deleted."
+    flash[:info] = 'Invitation successfully deleted.'
     redirect_to root_url
   end
 
@@ -46,11 +46,10 @@ class InvitationsController < ApplicationController
   end
 
   def rsvp_params
-    params.require(:response) 
+    params.require(:response)
   end
 
   def fetch_invite
     @invitation = Invitation.find(params[:id])
   end
-
 end

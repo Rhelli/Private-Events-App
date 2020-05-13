@@ -4,10 +4,10 @@ class Invitation < ApplicationRecord
   validates_uniqueness_of :event_attendee, scope: 'invited_to_event_id', message: 'This member is already invited.'
 
   def accepted
-    self.update(rsvp: true)
+    update(rsvp: true)
   end
 
   def declined
-    self.update(rsvp: false)
+    update(rsvp: false)
   end
 end

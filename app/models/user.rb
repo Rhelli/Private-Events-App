@@ -6,15 +6,13 @@ class User < ApplicationRecord
   before_save { self.name = name.downcase.capitalize! }
   validates :name, presence: true, length: { maximum: 100 }, allow_nil: false
 
-
   def upcoming_events
-    self.events.where('event_date >= ?', Time.now).order(date: :asc)
-    self.invited_to_events.where('event_date >= ?', Time.now).order(date: :asc)
+    events.where('event_date >= ?', Time.now).order(date: :asc)
+    invited_to_events.where('event_date >= ?', Time.now).order(date: :asc)
   end
 
   def past_events
-    self.events.where('event_date < ?', Time.now).order(date: :desc)
-    self.invited_to_events.where('event_date < ?', Time.now).order(date: :desc)
+    events.where('event_date < ?', Time.now).order(date: :desc)
+    invited_to_events.where('event_date < ?', Time.now).order(date: :desc)
   end
-
 end
