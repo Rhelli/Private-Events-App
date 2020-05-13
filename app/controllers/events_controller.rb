@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   
   def index
-    @events = Event.all
+    @events = Event.order(created_at: :desc)
   end
   
   def new
@@ -14,6 +14,7 @@ class EventsController < ApplicationController
       flash[:success] = "The '#{@event.name}' event has been created successfully!"
       redirect_to @event
     else
+      flash[:danger] = "An error occurred. Please make sure you fill out all fields."
       render 'new'
     end
   end
@@ -25,6 +26,6 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :event_date)
+      params.require(:event).permit(:name, :event_date, :description)
     end
 end

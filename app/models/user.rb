@@ -3,8 +3,8 @@ class User < ApplicationRecord
   has_many :invitations, foreign_key: :event_attendee_id
   has_many :invited_to_events, through: :invitations
 
-  before_save { self.name = name.downcase }
-  validates :name, presence: true, length: { maximum: 30 }, allow_nil: false
+  before_save { self.name = name.downcase.capitalize! }
+  validates :name, presence: true, length: { maximum: 100 }, allow_nil: false
 
 
   def upcoming_events

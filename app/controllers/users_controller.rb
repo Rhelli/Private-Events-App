@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       flash[:success] = 'You have been signed in.'
       redirect_to user_path(@user)
     else
+      flash[:danger] = 'An error occurred. Please ensure you complete all the fields!'
       render 'new'
     end
   end
