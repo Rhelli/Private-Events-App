@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }, allow_nil: false
 
   def hosted_events
-    event.created_event
+    events.created_event
   end
   
   def invites

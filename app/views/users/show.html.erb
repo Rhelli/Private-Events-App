@@ -27,6 +27,23 @@
           <% end %>
         </ul>
       </div>
+      <div>
+        <h2 class="label-subtitle">Hosted Events</h2>
+      </div>
+      <div class="user-events-lists">
+        <ul>
+          <% @hosted_events.each do |event| %>
+            <div class="event-card">
+              <li>
+                <h2><%= link_to(event.name, event_path(event)) %></h2>
+                <div>
+                  <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+                </div>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class="user-upcoming-events">
       <h2 class="label-subtitle">Upcoming</h2>
