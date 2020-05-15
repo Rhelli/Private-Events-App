@@ -19,7 +19,7 @@ class User < ApplicationRecord
     invited_to_events.where('event_date >= ?', Time.now)
   end
 
-  def past_events
+  def past_events 
     invited_to_events.where('event_date < ?', Time.now).order(date: :desc)
   end
 end
