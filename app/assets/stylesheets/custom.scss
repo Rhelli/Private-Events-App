@@ -521,6 +521,17 @@ body {
   }
 }
 
+.created-event-card {
+  background-color: red;
+  li {
+    background-color: #2FCEAB;
+    div {
+      background-color: red;
+    }
+  }
+
+}
+
 // EVENT CREATION PAGE ------------------------------------------------------//
 .event-container {
   justify-content: start;

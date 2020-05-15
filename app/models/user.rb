@@ -7,12 +7,15 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }, allow_nil: false
 
   def upcoming_events
-    events.where('event_date >= ?', Time.now).order(date: :asc)
-    invited_to_events.where('event_date >= ?', Time.now).order(date: :asc)
+    invited_to_events.where('event_date >= ?', Time.now)
   end
 
   def past_events
-    events.where('event_date < ?', Time.now).order(date: :desc)
     invited_to_events.where('event_date < ?', Time.now).order(date: :desc)
+  end
+
+  def invites
+    invited_to_events.where('event_date >= ?', Time.now).order(:desc)
+    invitations.where('rsvp = ?', false)
   end
 end

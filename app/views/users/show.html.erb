@@ -29,23 +29,23 @@
         </div>
     </div>
     <div class="user-event-invitations">
-        <div>
-          <h2 class="label-subtitle">Event Invitations</h2>
-        </div>
-        <div class="user-events-lists">
-          <ul>
-            <% @user.invitations.each do |invitation| %>
-              <div class="event-card">
-                <li>
-                  <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
-                  <div>
-                    <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
-                  </div>
-                </li>
-              </div>
-            <% end %>
-          </ul>
-        </div>
+      <div>
+        <h2 class="label-subtitle">Event Invitations</h2>
+      </div>
+      <div class="user-events-lists">
+        <ul>
+          <% @invites.each do |invitation| %>
+            <div class="event-card">
+              <li>
+                <h2><%= link_to(@invites.name, invitation_path(invitation)) %></h2>
+                <div>
+                  <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
+                </div>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class="user-past-events">
         <div>
