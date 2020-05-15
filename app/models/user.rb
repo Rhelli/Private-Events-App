@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   def upcoming_events
     invited_to_events.where('event_date >= ?', Time.now)
+    
   end
 
   def past_events
