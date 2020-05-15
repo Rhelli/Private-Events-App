@@ -824,7 +824,7 @@ body {
   }
 }
 
-.user-all-events,
+.user-upcoming-events,
 .user-event-invitations,
 .user-past-events {
   display: flex;
@@ -857,27 +857,50 @@ body {
   overflow-y: scroll;
 }
 
-.user-all-events {
-  width: 32%;
-  .label-subtitle {
-    background-color: #EA9FB5;
-    position: relative;
-    width: 300px;
-  }
-}
-
 .user-event-invitations {
-  width: 32%;
+  width: 56%;
   .label-subtitle {
     width: 300px;
     margin-right: 0;
   }
 }
 
-.user-past-events {
-  width: 32%;
+.user-upcoming-events {
+  width: 22%;
   .label-subtitle {
-    width: 300px;
+    font-size: 26px;
+    background-color: #EA9FB5;
+    position: relative;
+    width: 90%;
+  }
+  margin: 0 5px;
+}
+
+.user-past-events {
+  width: 22%;
+  .label-subtitle {
+    font-size: 26px;
+    width: 90%;
+  }
+}
+
+.user-upcoming-events,
+.user-past-events {
+  .event-card {
+    height: 100px;
+    h2 {
+      width: 100%;
+      overflow: visible;
+      margin: 8px 0;
+      padding: 0;
+      font-size: 22px;
+    }
+    div:last-child {
+      height: 40px;
+      p {
+        padding: 0;
+      }
+    }
   }
 }
 
