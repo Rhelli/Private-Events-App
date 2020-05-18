@@ -3,6 +3,8 @@ class Invitation < ApplicationRecord
   belongs_to :event_attendee, class_name: 'User'
   validates_uniqueness_of :event_attendee, scope: 'invited_to_event_id', message: 'This member is already invited.'
 
+  
+
   def accepted
     update(rsvp: true)
   end

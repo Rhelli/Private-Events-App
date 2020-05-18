@@ -18,7 +18,7 @@
           <% @invites.each do |invitation| %>
             <div class="event-card">
               <li>
-                <h2><%= link_to(@invites.name, invitation_path(invitation)) %></h2>
+                <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
                 <div>
                   <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
                 </div>
