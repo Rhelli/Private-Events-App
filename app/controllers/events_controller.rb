@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
-  def index
+  include EventsHelper
+
+    def index
     @events = Event.all
     # TODO: Remove 'all events' and segregate page using upcoming and past events
     @upcoming_events = Event.upcoming_events
@@ -23,6 +25,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
+    @event_creator = :event_creator
   end
 
   private
