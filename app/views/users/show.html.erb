@@ -1,10 +1,10 @@
 <div class="container event-container user-show-container">
   <div class="user-event-counter">
     <p><%= @user.upcoming_events.count %></p>
-    <p>upcoming <%= 'event'.pluralize(@user.events.count) %></p>
+    <p>upcoming <%= 'event'.pluralize(@user.upcoming_events.count) %></p>
   </div>
   <div class="user-invitation-counter">
-    <p><%= @user.invitations.count %></p>
+    <p><%= @user.invites.count %></p>
     <p><%= 'invitation'.pluralize(@user.invitations.count) %></p>
   </div>
   <h1>My Events</h1>

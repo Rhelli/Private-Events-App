@@ -11,8 +11,8 @@ class User < ApplicationRecord
   end
   
   def invites
-    invited_to_events.where('event_date >= ?', Time.now).order(:desc)
-    invitations.where('rsvp = ?', false)
+    #invited_to_events.where('event_date >= ?', Time.now).order(date: :desc)
+    invitations.where('rsvp = ?', false).order(created_at: :asc)
   end
   
   def upcoming_events
