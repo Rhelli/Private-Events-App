@@ -8,7 +8,7 @@
     <div class="invitation-event-desc">
       <h2><%= @event.name %></h2>
       <div>
-        <h3>You have cordially been invited to join the "<%= @event.name %>" event, hosted by <%= @event.creator.name %></h3>
+        <h3>You have cordially been invited to join the "<%= @event.name %>" event, hosted by <%= @event.creator.name.titleize %></h3>
         <% if @event.description %>
           <p><%= @event.description %></p>
         <% end %>
