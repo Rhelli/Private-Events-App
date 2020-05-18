@@ -628,10 +628,10 @@ body {
 
 .event-main-container {
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-content: start;
+  align-items: start;
   height: 75%;
   width: 90%;
   background-color: #fafbfd;
@@ -692,6 +692,15 @@ body {
       }
     }
   }
+}
+
+.event-show-user-list,
+.event-show-desc {
+  display: flex;
+  width: 50%;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
 }
 
 .event-users {

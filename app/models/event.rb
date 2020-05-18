@@ -11,4 +11,8 @@ class Event < ApplicationRecord
 
   scope :upcoming_events, -> { where('event_date >= ?', Time.now).includes(:creator) }
   scope :past_events, -> { where('event_date < ?', Time.now).order(date: :desc).includes(:creator) }
+
+  def date
+    event_date.strftime('%I:%M %P, %B %-d, %Y')
+  end
 end
