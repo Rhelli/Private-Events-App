@@ -7,6 +7,7 @@
   <div class="event-main-container invitation-card-container">
     <div class="invitation-event-desc">
       <h2><%= @event.name %></h2>
+      <h3><%= @invitation.date%><h3>
       <div>
         <h3>You have cordially been invited to join the "<%= @event.name %>" event, hosted by <%= @event.creator.name.titleize %></h3>
         <% if @event.description %>
