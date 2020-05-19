@@ -13,7 +13,7 @@ RSpec.describe SessionsController, type: :controller do
 
     it 'should store the current users id in a session cookie upon logging in' do
       post :create, params: { session: { name: user.name } }
-      expect(session[:user_id]).to eq(@current_user)
+      expect(session[:user_id]).to eq(current_user.id)
     end
 
     it 'should reject incorrect login params and refresh the page' do

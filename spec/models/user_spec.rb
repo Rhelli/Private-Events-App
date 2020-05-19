@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   context 'Users names are formatted and validated' do
     it "saves the user's name to capitalized downcase" do
       user = User.create!(name: 'STEVE')
-      expect(user.reload.name).to eq('Steve')
+      expect(user.reload.name).to eq('steve')
     end
 
     it 'does not allow blank names to be saved' do

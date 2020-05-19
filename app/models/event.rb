@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   validates :description, presence: true, length: { maximum: 20_000 }
   validates :creator_id, presence: true
 
-  scope :upcoming_events, -> { where('event_date >= ?', Time.now).includes(:creator) }
+  scope :upcoming_events, -> { where('event_date >= ?', Time.now).order(date: :desc).includes(:creator)}
   scope :past_events, -> { where('event_date < ?', Time.now).order(date: :desc).includes(:creator) }
   scope :created_event, -> { where('creator_id', @current_user) }
 

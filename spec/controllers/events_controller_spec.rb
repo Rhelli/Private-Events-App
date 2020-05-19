@@ -9,11 +9,16 @@ RSpec.describe EventsController, type: :controller do
   let(:create_event) { post :create, params: { event: { name: 'Tester', event_date: '2021-05-05 20:00:00 UTC', description: 'something or other'} } }
   
   context 'displaying the events index' do
-    it 'should display all the events in descending (created) order' do
+    it 'should display all the upcoming events in descending (created) order' do
       get :index
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:index)
-      expect(assigns(:events)).to eq([event2, event1])
+      expect(assigns(:upcoming_events)).to eq([event2])
+    end
+
+    it 'should display all the past events in descending (created) order' do
+      get :index
+      expect(assigns(:past_events)).to eq([event1])
     end
   end
 

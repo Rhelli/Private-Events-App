@@ -2,8 +2,6 @@ class EventsController < ApplicationController
   include EventsHelper
 
     def index
-    @events = Event.all
-    # TODO: Remove 'all events' and segregate page using upcoming and past events
     @upcoming_events = Event.upcoming_events
     @past_events = Event.past_events
   end
