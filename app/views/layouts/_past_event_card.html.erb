@@ -2,7 +2,8 @@
   <% @past_events.each do |event| %>
   <div class="event-card">
     <li>
-      <h2><%= link_to(event.name, event_path(event))%></h2>
+      <h2 class="event-index-name"><%= link_to(event.name, event_path(event))%></h2>
+      <p class="event-index-date"><%= event.date %></p>
       <div>
         <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
         <p>Host: <%= event.creator.name.capitalize %></p>

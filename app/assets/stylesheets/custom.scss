@@ -1,0 +1,1343 @@
+//@import '@fortawesome/fontawesome-free';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import url(https://fonts.googleapis.com/css?family=Baloo+Bhaina+2:regular,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular);
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+body {
+  background-color: #c70039;
+  background-image: image-url('food.png');
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-align: left;
+  margin: auto;
+}
+
+.label-subtitle {
+  width: auto;
+  position: relative;
+  font: 300 32px/32px 'Baloo Bhaina 2';
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #404040;
+  padding: 12px 14px;
+  border-radius: 2px;
+  border-right: 2px solid #7E0B37;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  -moz-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+}
+
+// NAV BAR --------------------------------------------------------//
+.home-card {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #F1E1E7;
+  border: 5px solid #ffa41b;
+  border-radius: 26px;
+  width: 70%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 100px 20px 20px 20px;
+  overflow-x: hidden;
+  -webkit-box-shadow: 0px 3px 24px 3px rgba(72,6,32,1);
+  -moz-box-shadow: 0px 3px 24px 3px rgba(72,6,32,1);
+  box-shadow: 0px 3px 24px 3px rgba(72,6,32,1);
+}
+
+.site-nav {
+  border-radius: 25px;
+  height: 65px;
+  li, a:not(.nav-logo) {
+    font: 400 20px/20px "Baloo Bhaina 2";
+    text-transform: uppercase;
+    color: #c70039;
+    padding: 16px 20px;
+    transition: 0.2s;
+    border-radius: 4px;
+    a {
+      color: #c70039;
+      text-decoration: none;
+      &:hover {
+        color: #F1E1E7;
+        background-color: #900C3F;
+        border-radius: 4px;
+        transition-duration: 0.015s;
+        text-shadow: 0px 7px 9px rgba(81,14,14,0.52);
+      }
+    }
+  }
+  .logged-username {
+    margin-top: 22px;
+    padding: 8px 20px;
+    font: 600 18px/18px 'Baloo Bhaina 2';
+    color: #fafbfd;
+    background-color: #606060;
+  }
+  li:last-child {
+    margin-right: 15px;
+  }
+  .dropdown-menu {
+    padding: 0;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    li {
+    padding: 0;
+    width: 180px;
+    margin-right: 0;
+    a {
+      &:hover {
+        border-radius: 0;
+      }
+    }
+    &:hover {
+      color: #F1E1E7;
+      background-color: #900C3F;
+      transition-duration: 0.015s;
+      text-shadow: 0px 7px 9px rgba(81,14,14,0.52);
+    }
+    }
+  }
+  .events-dropdown {
+    li:first-child {
+      a {
+        display: inline-block;
+        border-radius: 0;
+      }
+      i {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.nav-join {
+  margin-right: 20px;
+  a {
+    font-weight: 500 !important;
+    background-color: #900C3F;
+    color: #F1E1E7 !important;
+    border-radius: 4px;
+    transition-duration: 0.08s;
+    &:hover {
+      background-color: #ffa41b !important;
+      color: #900C3F !important;
+      font-weight: 600;
+      border-radius: 40px;
+      transform: scale(1.06);
+      transition-duration: 0.05s;
+      text-shadow: 0px 7px 9px rgba(143,92,15,0.56);
+    }
+  }
+}
+
+.nav-logo {
+  height: 60px;
+  padding: 14px 8px 0px 20px !important;
+  margin-left: 3px;
+  font: 600 28px/34px "Baloo Bhaina 2" !important;
+  img {
+    display: inline-block;
+    margin: 0 !important;
+    height: 50px;
+    width: 45px;
+  }
+  color: #c70039;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    color: #c70039;
+  }
+}
+
+// HOME PAGE CONTAINER ---------------------------------------------------------//
+.home-page-container {
+  height: 100%;
+  width: 100%;
+  background-color: #C70039;
+  background-image: image-url('dark-dot.png');
+  border-radius: 10px;
+  border: 2px solid #7E0B37;
+  -webkit-box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
+  -moz-box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
+  box-shadow: inset 0px -2px 21px 2px rgba(108,9,47,1);
+  overflow: hidden;
+}
+
+.flash-container {
+  text-align: center;
+  font: 500 18px/20px 'Manrope', sans-serif;
+  position: absolute;
+  top: 66px;
+  width: 100%;
+  color: #303030;
+  text-shadow: 0px 3px 6px #BABABA;
+}
+
+// SIGN-IN PAGE -------------------------------------------//
+.signin-container, .signup-container {
+  width: 60%;
+  height: 50%;
+  position: relative;
+  top: 45%;
+  transform: translateY(-45%);
+  margin: 0 auto;
+  background-color: #F1E1E7;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
+  -moz-box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
+  box-shadow: 0px 2px 21px -4px rgba(60,56,58,1);
+  font-family: 'Manrope', sans-serif;
+  border: 3px solid #ffa41b;
+}
+
+// SIGN-IN PAGE ---------------------------------------------//
+.signin-form{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  h2 {
+    font: 400 40px/40px 'Baloo Bhaina 2';
+    margin-top: 50px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  input, textarea, select {
+    border: 1px solid #dcdcdc;
+    width: 60%;
+    height: 35px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  form {
+    text-align: center;
+    textarea, input {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-radius: 0;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    .form-control {
+      box-shadow: none !important;
+      border-bottom: 2px dotted #EA9FB5;
+      font: 300 20px/20px 'Manrope';
+      &:focus {
+        border-bottom: 2px dotted #CE2052;
+      }
+      margin-bottom: 20px;
+    }
+  }
+  p {
+    font: 400 18px/18px 'Manrope';
+    transition-duration: 0.2s;
+    margin-top: 15px;
+    a {
+      color: #900C3F;
+      &:hover {
+        color: #ffa41b;
+        transition-duration: 0.15s;
+      }
+    }
+  }
+  .signin-btn {
+    height: 50px;
+    background-color: #7E0B37;
+    color: #fafbfd;
+    font: 500 22px/22px 'Baloo Bhaina 2';
+    padding: 14px 16px;
+    transition-duration: 0.2s;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    &:hover {
+      background-color: #C70039;
+      color: #ffa41b;
+      transform: scale(1.02);
+      transition-duration: 0.15s;
+    }
+  }
+}
+
+// JOIN PAGE ------------------------------------//
+.signup-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: start;
+  height: 90%;
+  width: 90%;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #fafbfd;
+}
+
+.signup-graphic {
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  background-image: image-url('iso-party');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.signup-form {
+  width: 55%;
+  padding: 25px 10px 25px 25px;
+  text-align: left;
+  h1 {
+    font: 300 50px/50px 'Baloo Bhaina 2';
+    color: #404040;
+  }
+  p {
+    font: 300 21px/21px 'Manrope';
+    line-height: 1.5;
+    color: #606060;
+    margin-bottom: 20px;
+  }
+  form {
+    padding: 20px 10px 10px 0px;
+    text-align: left;
+    border-top: 1px solid #F1BFCE;
+    border-top-style: dotted;
+    label {
+      display: inline-block;
+      color: #808080;
+      font: 300 16px/16px "Manrope";
+      margin-right: 5px;
+    }
+    .form-control {
+      display: inline-block;
+      width: 70%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 3px solid #EA9FB5;
+      box-shadow: none;
+      outline: none;
+      border-radius: 0;
+      margin-top: 15px;
+      margin-bottom: 40px;
+      font: 300 20px/20px 'Manrope';
+      padding-left: 5px;
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid #CE2052;
+      }
+    }
+    .btn {
+      display: block;
+      height: 60px;
+      width: 200px;
+      border-radius: 4px;
+      position: relative;
+      background-color: #7E0B37;
+      font: 500 24px/24px 'Baloo Bhaina 2';
+      color: white;
+      padding: 15px 16px;
+      transition-duration: 0.03s;
+      &:hover {
+        background-color: #ffa41b !important;
+        color: #900C3F !important;
+        font-weight: 600;
+        border-radius: 4px;
+        transform: scale(1.06);
+        transition-duration: 0.05s;
+        text-shadow: 0px 7px 9px rgba(143,92,15,0.56);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .disclaimer {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+    color: #808080;
+    a {
+      color: #EA9FB5;
+    }
+  }
+}
+
+// HOME/WELCOME PAGE ---------------------------------------------//
+.welcome-container {
+  width: 90%;
+  height: 90%;
+  justify-content: space-between;
+}
+
+.welcome-graphic {
+  background-image: image-url('iso-party-join');
+  width: 55%;
+}
+
+.welcome-info {
+  display: flex;
+  height: 100%;
+  width: 45%;
+  flex-direction: column;
+  justify-content: start;
+  padding: 80px 0 20px 20px;
+  h1 {
+    font: 500 50px/50px 'Baloo Bhaina 2';
+    margin-bottom: 20px;
+  }
+  p {
+    font: 300 24px/32px 'Manrope';
+    margin: 10px 0 30px 0;
+  }
+  .welcome-signup-btn {
+    display: block;
+    height: 60px;
+    width: 200px;
+    border-radius: 4px;
+    position: relative;
+    background-color: #7E0B37;
+    font: 500 24px/24px 'Baloo Bhaina 2';
+    text-align: center;
+    color: white;
+    padding: 18px 16px;
+    transition-duration: 0.03s;
+    margin-top: 20px;
+    &:hover {
+      text-decoration: none;
+      background-color: #ffa41b !important;
+      color: #900C3F !important;
+      font-weight: 600;
+      border-radius: 4px;
+      transform: scale(1.06);
+      transition-duration: 0.05s;
+      text-shadow: 0px 7px 9px rgba(143,92,15,0.56);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// EVENTS INDEX ----------------------------------------------//
+.event-index-container {
+  display: flex;
+  justify-container: center;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.event-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+  ul {
+    width: 90%;
+    list-style-type: none;
+    margin: 0;
+    padding-inline-start: 0;
+    padding: 0;
+  }
+  h1 {
+    position: relative;
+    font: 300 48px/48px 'Baloo Bhaina 2';
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #404040;
+    padding: 12px 14px;
+    border-radius: 2px;
+    border-right: 2px solid #7E0B37;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+    -moz-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+    box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  }
+}
+
+.event-index-cards-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 95%;
+  height: 80%;
+  background-color: #C70039;
+  background-image: image-url('dark-dot');
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  -moz-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  ul {
+    width: 100%;
+  }
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.event-card {
+  width: 100%;
+  height: 170px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  background-color: #fafbfd;
+  -webkit-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  -moz-box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  box-shadow: 0px 5px 15px 2px rgba(79,7,34,1);
+  border: 1px solid #7C0024;
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: #F1BFCE;
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    h2 {
+      display: inline-block;
+      font: 400 30px/30px 'Manrope';
+      width: auto;
+      border-bottom: 1px dotted #F1BFCE;
+      padding-left: 30px;
+      padding-bottom: 10px;
+      margin-top: 20px;
+      a {
+        color: #C70039;
+        transition-duration: 0.3s;
+        &:hover {
+          color: #ffa41b;
+          text-decoration: none;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+    .event-index-date {
+      display: inline-block;
+      margin-left: 10px;
+      font: 400 14px/14px 'Manrope';
+      color: #95002B;
+    }
+    div {
+      width: 100%;
+      padding: 8px;
+      background-color: #fafbfd;
+      background-image: image-url('cream-pixels');
+      -webkit-box-shadow: inset 0px 0px 16px 1px rgba(171,171,171,1);
+      -moz-box-shadow: inset 0px 0px 16px 1px rgba(171,171,171,1);
+      box-shadow: inset 0px 0px 16px 1px rgba(171,171,171,1);
+      border-top: 1px solid #D3A7B4;
+      p {
+        padding-left: 30px;
+        font: 400 16px/16px 'Manrope';
+      }
+    }
+  }
+}
+
+.created-event-card {
+  background-color: red;
+  li {
+    background-color: #2FCEAB;
+    div {
+      background-color: red;
+    }
+  }
+
+}
+
+// EVENT CREATION PAGE ------------------------------------------------------//
+.event-container {
+  justify-content: start;
+  height: 100%;
+  width: 100%;
+}
+
+.event-creation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  height: auto;
+  width: 80%;
+  background-color: #fafbfd;
+  border: 3px solid #ffa41b;
+  border-radius: 8px;
+  p {
+    font: 300 22px/24px 'Manrope';
+  }
+  form {
+    input[type=text] {
+      background: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 2px dotted #EA9FB5;
+      border-radius: 0;
+      text-align: center;
+      font: 300 20px/22px 'Manrope';
+      margin-top: 20px;
+    }
+    textarea:focus, input:focus {
+      outline: none;
+      box-shadow: none;
+      border-bottom: 2px dotted #CE2052;
+    }
+  }
+
+  .new-event-desc {
+    height: 120px;
+    outline: 2px dotted #EA9FB5;
+    border-bottom: none !important;
+    margin-top: 30px;
+    &:focus {
+      outline: 2px solid #CE2052;
+    }
+  }
+
+  .event-create-btn {
+    margin-top: 15px;
+    height: 50px;
+    background-color: #7C0024;
+    color: #fafbfd;
+    font: 500 22px/24px 'Baloo Bhaina 2';
+    padding: 14px 12px;
+    border: none;
+    transition-duration: 0.15s;
+    &:hover {
+      background-color: #95002B;
+      color: #ffa41b;
+      transform: scale(1.02);
+      transition-duration: 0.15s;
+      font-weight: 600;
+    }
+  }
+}
+
+// EVENT SHOW PAGE ------------------------------------------//
+.event-main {
+  position: relative;
+  h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    max-width: 80%;
+  }
+}
+
+.event-main-nav {
+  position: absolute;
+  left: 10px;
+  background-color: transparent;
+  font-size: 48px;
+  border-radius: 4px;
+  a {
+    color: #fafbfd;
+    transition-duration: 0.2s;
+    &:hover {
+      color: #ffa41b;
+      text-decoration: none;
+      transition-duration: 0.2s;
+    }
+  }
+}
+
+.event-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: start;
+  align-items: start;
+  height: 75%;
+  width: 90%;
+  background-color: #fafbfd;
+  background-image: image-url('cream-pixels');
+  border-radius: 15px;
+  border: 3px solid #ffa41b;
+  padding: 20px;
+  -webkit-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  -moz-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.event-tags-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  flex-flow: row nowrap;
+  h2 {
+    font: 400 20px/20px 'Manrope';
+  }
+}
+
+.new-invite-container {
+  margin-left: auto;
+}
+
+.new-invite {
+  width: 170px;
+  background-color: #0FAE8B !important;
+  border-top: 1px solid #1D816B;
+  border-left: 1px solid #1D816B;
+  border-bottom: 1px solid #1D816B;
+  -webkit-box-shadow: 0px 2px 9px -1px rgba(7,69,53,1);
+  -moz-box-shadow: 0px 2px 9px -1px rgba(7,69,53,1);
+  box-shadow: 0px 2px 9px -1px rgba(7,69,53,1);
+  transition-duration: 0.2s;
+  h2 {
+    a {
+      color: white;
+      font-weight: 600;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &:hover {
+    background-image: linear-gradient( 113.1deg,  rgba(255,205,129,1) 1%, rgba(255,164,27,1) 93.1% );
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+    border: 1px solid #ffa41b;
+    border-right: 2px solid #202020;
+    -webkit-box-shadow: 0px 2px 12px -3px rgba(209,58,73,1);
+    -moz-box-shadow: 0px 2px 12px -3px rgba(209,58,73,1);
+    box-shadow: 0px 2px 12px -3px rgba(209,58,73,1);
+    transition-duration: 0.15s;
+    h2 {
+      a {
+        color: #404040;
+      }
+    }
+  }
+}
+
+.event-show-user-list,
+.event-show-desc {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+}
+
+.event-show-user-list {
+  width: 60%;
+}
+
+.event-show-desc {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: start;
+  text-align: center;
+  padding: 20px;
+  color: #fafbfd;
+  background-color: #C70039;
+  background-image: image-url('dark-dot');
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  -moz-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  div:first-child { 
+    margin-bottom: 30px;
+    font: 600 28px/30px 'Manrope';
+    color: #2FCEAB;
+  }
+
+  div:last-child {
+    p:first-child {
+      font: 600 26px/26px 'Manrope';
+      margin-bottom: 15px;
+    }
+    p:last-child {
+      text-align: left;
+      font: 400 18px/22px 'Manrope';
+    }
+  }
+}
+
+.event-users {
+  width: auto;
+}
+
+.event-main-host,
+.event-attending-title,
+.event-main-invited {
+  background-color: #EA9FB5;
+  padding: 8px 16px;
+  border-right: 2px solid #404040;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-bottom: 20px;
+  h2 {
+    margin: 0;
+  }
+  a {
+    color: #404040;
+    font-weight: 500;
+  }
+}
+
+.event-attending-title {
+  margin-right: auto;
+  margin-left: 30px;
+  h2 {
+    font: 400 32px/32px 'Manrope';
+  }
+}
+
+.event-attending {
+  width: 100%;
+  .event-attending-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    ul {
+      margin-right: 0;
+    }
+    .event-card {
+      height: 60px;
+      h2 {
+        font: 400 20px/20px 'Manrope';
+      }
+      -webkit-box-shadow: 0px 1px 16px -2px rgba(59,59,59,1);
+      -moz-box-shadow: 0px 1px 16px -2px rgba(59,59,59,1);
+      box-shadow: 0px 1px 16px -2px rgba(59,59,59,1);
+    }
+  }
+}
+
+// USER SHOW PAGE -------------------------------------------//
+.user-show-container {
+  position: relative;
+  padding: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.user-event-counter,
+.user-invitation-counter {
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  height: 44px;
+  width: 145px;
+  background-color: #fafbfd;
+  background-image: image-url('cream-pixels');
+  border-radius: 25px;
+  border: 1px solid #ffa41b;
+  -webkit-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  -moz-box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  box-shadow: 0px 3px 15px 1px rgba(69,8,8,1);
+  p {
+    width: 44px;
+    height: 44px;
+  }
+  p:first-child {
+    font: 500 28px/28px 'Baloo Bhaina 2';
+    border: 3px solid #ffa41b;
+    border-radius: 50%;
+    margin: 0;
+    text-align: center;
+    padding: 8px 10px;
+    -webkit-box-shadow: inset 0px 1px 13px -6px rgba(89,89,89,1);
+    -moz-box-shadow: inset 0px 1px 13px -6px rgba(89,89,89,1);
+    box-shadow: inset 0px 1px 13px -6px rgba(89,89,89,1);
+  }
+  p:last-child {
+    position: relative;
+    top: 3px;
+    font: 400 18px/18px 'Manrope';
+    padding: 12px 6px;
+  }
+}
+
+.user-event-counter {
+  right: 170px;
+  p:last-child {
+    padding: 4px 4px;
+  }
+}
+
+.user-events-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: start;
+  width: 100%;
+  height: 85%;
+  text-align: center;
+  .event-card {
+    width: 100%;
+    h2 {
+      font-size: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-left: 8px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.user-upcoming-events,
+.user-event-invitations,
+.user-past-events {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.user-events-lists {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+  background: #A5002F;
+  background-image: image-url('dark-dot');
+  -webkit-box-shadow: inset 0px 0px 27px 0px rgba(56,2,19,1);
+  -moz-box-shadow: inset 0px 0px 27px 0px rgba(56,2,19,1);
+  box-shadow: inset 0px 0px 27px 0px rgba(56,2,19,1);
+  margin: 0 6px; 
+  padding-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #C70039;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.user-event-invitations {
+  width: 56%;
+  margin-right: 10px;
+  .label-subtitle {
+    font: 26px/26px 'Baloo Bhaina 2';
+    width: 300px;
+  }
+  .label-subtitle:last-child {
+    margin-bottom: 25px;
+  }
+  .subtitle-container:first-child {
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+}
+
+.user-upcoming-events {
+  width: 22%;
+  .label-subtitle {
+    font-size: 26px;
+    background-color: #EA9FB5;
+    position: relative;
+    width: 90%;
+  }
+}
+
+.user-past-events {
+  width: 22%;
+  .label-subtitle {
+    font-size: 26px;
+    width: 90%;
+  }
+}
+
+.user-upcoming-events,
+.user-past-events {
+  .event-card {
+    height: 100px;
+    h2 {
+      width: 100%;
+      overflow: visible;
+      margin: 8px 0;
+      padding: 0;
+      font-size: 18px;
+    }
+    div:last-child {
+      height: 40px;
+      p {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// INVITATION SHOW PAGE ----------------------------------------------//
+.invitation-show-container {
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  .event-main-nav {
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.invitation-card-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-image: none;
+  height: auto;
+}
+
+.invitation-event-desc {
+  display: block;
+  width: 90%;
+  height: 100%;
+  background-color: #11C79F;
+  background-image: image-url('corrugation');
+  border-radius: 3px;
+  border: 1px solid #0FAE8B;
+  -webkit-box-shadow: 0px 2px 15px -1px rgba(4,50,40,1);
+  -moz-box-shadow: 0px 2px 15px -1px rgba(4,50,40,1);
+  box-shadow: 0px 2px 15px -1px rgba(4,50,40,1);
+  text-align: center;
+  padding: 10px;
+  color: #5029B4;
+  h2 {
+    font: 700 62px/62px 'Petit Formal Script';
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    margin-top: 10px;
+  }
+  h3 {
+    font: 400 24px/32px 'Petit Formal Script';
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  p {
+    font: 500 16px/20px 'Manrope';
+    margin-bottom: 20px;
+  }
+}
+
+.rsvp-box {
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  height: auto;
+  background-color: #0FAE8B;
+  background-image: inherit;
+  border-radius: 8px;
+  border: 1px solid #2FCEAB;
+  -webkit-box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
+  -moz-box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
+  box-shadow: inset 0px 0px 12px 0px rgba(13,149,119,1);
+  padding: 15px;
+  div:first-child {
+    margin-bottom: 15px;
+  }
+  div {
+    background-color: #2FCEAB;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px solid #29B496;
+    -webkit-box-shadow: 0px 0px 13px -1px rgba(29,129,107,1);
+    -moz-box-shadow: 0px 0px 13px -1px rgba(29,129,107,1);
+    box-shadow: 0px 0px 13px -1px rgba(29,129,107,1);
+    p {
+      margin-bottom: 0;
+      a {
+        font: 700 16px/16px 'Manrope';
+        color: #5029B4;
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    &:hover {
+      background-image: linear-gradient( 113.1deg,  rgba(255,205,129,1) 1%, rgba(255,164,27,1) 93.1% );
+      -webkit-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      -moz-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      border: 1px solid #ffa41b;
+      p {
+        color: #404040;
+        a {
+          color: #404040;
+        }
+      }
+    }
+  }
+}
+
+.invite-delete {
+  display: block;
+  width: 20%;
+  margin: 25px auto 10px auto;
+  p {
+    padding: 8px 16px;
+    font: 600 13px/14px 'Manrope';
+    background-color: #1D816B;
+    border-radius: 2px;
+    background-image: inherit;
+    transition-duration: 0.2s;
+    &:hover {
+      background-color: #c70039;
+      font-weight: 700;
+    }
+    a {
+      color: #ffa41b;
+      &:hover {
+        color: #ffa41b;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// INVITATION NEW CONTAINER ------------------------------------------------//
+.invitation-new-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .event-main-nav {
+    top: 0px;
+  }
+}
+
+.invitation-new-card{
+  min-height: 60%;
+  height: auto;
+}
+
+.new-invite-main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.invite-form {
+  width: 70%;
+  height: 30%;
+  .new-invite-form-fields {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #0FAE8B;
+    background-image: image-url('corrugation');
+    border-radius: 8px;
+    border: 1px solid #2FCEAB;
+    -webkit-box-shadow: inset 0px 0px 12px 0px rgba(13,149,124,1);
+    -moz-box-shadow: inset 0px 0px 12px 0px rgba(13,149,124,1);
+    box-shadow: inset 0px 0px 12px 0px rgba(13,149,124,1);
+  }
+  .row {
+    display: block;
+    width: 80%;
+  }
+  .row:first-child {
+    margin-bottom: 30px;
+  }
+  label,
+  select {
+    display: block;
+  }
+  label {
+    font: 400 20px/20px 'Manrope';
+    margin-bottom: 15px;
+  }
+  select {
+    width: 100%;
+    height: 30px;
+    color: #fafbfd;
+    font: 500 16px/16px 'Manrope';
+    text-align: center;
+    background-color: #0f9979;
+    background-image: image-url('corrugation');
+    border-radius: 8px;
+    border: 1px solid #10856a;
+    -webkit-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    -moz-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    &:focus {
+      outline: none;
+      -webkit-box-shadow: 0px 0px 12px -2px rgba(162,207,196,1);
+      -moz-box-shadow: 0px 0px 12px -2px rgba(162,207,196,1);
+      box-shadow: 0px 0px 12px -2px rgba(162,207,196,1);
+    }
+  }
+  .new-invite-submit {
+    color: #fafbfd;
+    width: 160px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #0f9979;
+    background-image: image-url('corrugation');
+    border-radius: 4px;
+    border: 1px solid #10856a;
+    -webkit-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    -moz-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+    margin: 20px 0;
+    font: 700 18px/18px 'Manrope';
+    transition-duration: 0.2s;
+    &:hover {
+      background-image: linear-gradient( 113.1deg,  rgba(255,205,129,1) 1%, rgba(255,164,27,1) 93.1% );
+      -webkit-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      -moz-box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      box-shadow: 0px 0px 7px -1px rgba(99,63,9,1);
+      border: 1px solid #ffa41b;
+      color: #303030;
+      font: 700 18px/18px 'Manrope';
+      transition-duration: 0.15s;
+      transform: scale(1.01);
+    }
+  }
+  .row:last-child {
+    select {
+      font: 500 18px/22px 'Manrope';
+      height: 120px;
+      overflow: hidden;
+      overflow-y: scroll;
+      &:checked {
+        background: red;
+      }
+    }
+  }
+  
+}
+
+.multi-select-container {
+  display: inline-block;
+  width: 99%;
+  height: 30px;
+  position: relative;
+}
+
+.multi-select-menu {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  float: left;
+  min-width: 100%;
+  background: #2DA68A;
+  border: 1px solid #0FAE8B;
+  -webkit-box-shadow: 0px 1px 5px -1px rgba(6,20,17,1);
+  -moz-box-shadow: 0px 1px 5px -1px rgba(6,20,17,1);
+  box-shadow: 0px 1px 5px -1px rgba(6,20,17,1);
+  background-image: image-url('corrugation');
+  display: none;
+  border-radius: 4px;
+  text-align: right;
+  input[type=checkbox] {
+    position: absolute;
+    left: 20px;
+  }
+  label {
+    height: 50px;
+    padding: 10px 30px 10px 20px;
+    border-top: 1px solid #10856a;
+    margin-bottom: 0;
+  }
+}
+
+.multi-select-menu input {
+  vertical-align: 0.1em;
+}
+
+.multi-select-button {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  padding: 0.2em 0.6em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: -0.5em;
+  border-radius: 4px;
+  background-color: #0f9979;
+  background-image: image-url('corrugation');
+  border-radius: 4px;
+  border: 1px solid #10856a;
+  -webkit-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+  -moz-box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+  box-shadow: inset 0px 0px 13px -5px rgba(8,107,84,1);
+  cursor: default;
+  text-align: left;
+  &:focus {
+    outline: none;
+  }
+}
+
+.multi-select-button:after {
+  content: "";  
+  position: absolute;
+  right: 5px;
+  top: 12px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.4em 0.4em 0 0.4em;
+  border-color: #fafbfd transparent transparent transparent;
+  margin-left: 0.4em;
+  vertical-align: 0.1em;
+}
+
+.multi-select-container--open .multi-select-menu {
+  display:block; 
+}
+
+.multi-select-container--open .multi-select-button:after {
+  border-width: 0 0.4em 0.4em 0.4em;
+  border-color: transparent transparent #999 transparent;
+}
