@@ -1,4 +1,14 @@
-<div class="container event-container">
-  <h1>Upcoming Events</h1>
-  <%= render 'layouts/event_card' %>
+<div class="container event-index-container">
+  <div class="event-container">
+    <h1>Upcoming Events</h1>
+    <div class="event-index-cards-container">
+      <%= render 'layouts/upcoming_event_card' %>
+    </div>
+  </div>
+  <div class="event-container">
+    <h1>Past Events</h1>
+    <div class="event-index-cards-container">
+      <%= render 'layouts/past_event_card' %>
+    </div>
+  </div>
 </div>
