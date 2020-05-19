@@ -9,16 +9,16 @@ class User < ApplicationRecord
   def hosted_events
     events.created_event
   end
-  
+
   def invites
     invitations.where('rsvp = ?', false).order(created_at: :asc)
   end
-  
+
   def upcoming_events
     invited_to_events.where('event_date >= ?', Time.now)
   end
 
-  def past_events 
+  def past_events
     invited_to_events.where('event_date < ?', Time.now).order(date: :desc)
   end
 end
