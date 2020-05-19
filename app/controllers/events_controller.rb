@@ -26,6 +26,8 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by(id: params[:id])
     @event_creator = :event_creator
+    @past_events = Event.past_events
+    @upcoming_events = Event.upcoming_events
   end
 
   private

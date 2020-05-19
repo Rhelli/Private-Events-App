@@ -646,18 +646,22 @@ body {
   overflow-y: scroll;
 }
 
-.event-main-host {
-  position: relative;
+.event-tags-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  flex-flow: row nowrap;
   h2 {
     font: 400 20px/20px 'Manrope';
   }
 }
 
+.new-invite-container {
+  margin-left: auto;
+}
+
 .new-invite {
-  position: absolute !important;
   width: 170px;
-  top: 0px;
-  left: 374px;
   background-color: #0FAE8B !important;
   border-top: 1px solid #1D816B;
   border-left: 1px solid #1D816B;
@@ -697,10 +701,47 @@ body {
 .event-show-user-list,
 .event-show-desc {
   display: flex;
-  width: 50%;
   flex-flow: column nowrap;
   justify-content: start;
   align-items: center;
+}
+
+.event-show-user-list {
+  width: 60%;
+}
+
+.event-show-desc {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: start;
+  text-align: center;
+  padding: 20px;
+  color: #fafbfd;
+  background-color: #C70039;
+  background-image: image-url('dark-dot');
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  -moz-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+  div:first-child { 
+    margin-bottom: 30px;
+    font: 600 28px/30px 'Manrope';
+    color: #2FCEAB;
+  }
+
+  div:last-child {
+    p:first-child {
+      font: 600 26px/26px 'Manrope';
+      margin-bottom: 15px;
+    }
+    p:last-child {
+      text-align: left;
+      font: 400 18px/22px 'Manrope';
+    }
+  }
 }
 
 .event-users {
@@ -726,6 +767,8 @@ body {
 }
 
 .event-attending-title {
+  margin-right: auto;
+  margin-left: 30px;
   h2 {
     font: 400 32px/32px 'Manrope';
   }

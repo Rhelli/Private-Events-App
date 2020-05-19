@@ -5,12 +5,16 @@
     <% end %>
   </div>
   <h1><%= @event.name %></h1>
-  <div class="event-main-host">
-    <h2>Hosted by: <%= link_to(@event.creator.name.capitalize, users_path(@user)) %> 🎉 </h2>
+  <div class="event-tags-container">
+    <div class="event-main-host">
+      <h2>Hosted by: <%= link_to(@event.creator.name.titleize, users_path(@user)) %> 🎉 </h2>
+    </div>
     <% if @event_creator %>
+    <div class="new-invite-container">
       <div class="event-main-host new-invite">
         <h2><%= link_to("Invite Guests", new_invitation_path(@event)) %></h2>
       </div>
+    </div>
     <% end %>
   </div>
   <div class="event-main-container">
@@ -29,7 +33,7 @@
             <% end %>
             <div class="event-card">
               <li>
-                <h2><%= link_to(attendee.name, user_path(attendee))%></h2>
+                <h2><%= link_to(attendee.name.titleize, user_path(attendee))%></h2>
               </li>
             </div>
             <% end %>
@@ -38,8 +42,13 @@
       </div>
     </div>
     <div class="event-show-desc">
-      <p><%= @event.date %></p>
-      <p><%= @event.description %></p>
+      <div>
+        <p>This event's scheduled date is: <%= @event.date %></p>
+      </div>
+      <div>
+        <p>The Details:</p>
+        <p><%= @event.description %></p>
+      </div>
     </div>
   </div>
 </div>
