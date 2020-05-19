@@ -15,4 +15,4 @@ files:
     - "Rakefile"
     - "README.md"
     - "node_modules/**/*"
-    - "spec"
+    - "spec/*"
