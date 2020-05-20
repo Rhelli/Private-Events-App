@@ -14,7 +14,7 @@ class Event < ApplicationRecord
   scope :created_event, -> { where('creator_id', @current_user) }
 
   def confirmed_attendees
-    invitations.where('rsvp = ?', true)
+    attendees.where('rsvp = ?', true)
   end
 
   def date

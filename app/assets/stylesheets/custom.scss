@@ -807,7 +807,7 @@ body {
   border-right: 2px solid #404040;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   h2 {
     margin: 0;
     width: auto;
@@ -839,7 +839,15 @@ body {
       margin-right: 0;
       overflow: hidden;
       overflow-y: scroll;
-      height: 50%;
+      height: 100%;
+      padding: 10px;
+      background-color: #C70039;
+      background-image: image-url('dark-dot');
+      border-radius: 8px;
+      -webkit-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+      -moz-box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+      box-shadow: inset 0px 0px 18px 0px rgba(99,5,33,1);
+      border: 2px solid #ffa41b;
     }
     .event-card {
       height: 60px;
