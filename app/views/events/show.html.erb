@@ -9,7 +9,7 @@
     <div class="event-main-host">
       <h2>Hosted by: <%= link_to(@event.creator.name.titleize, users_path(@user)) %> 🎉 </h2>
     </div>
-    <% if @event_creator %>
+    <% if @event_creator && @invite_enable %>
     <div class="new-invite-container">
       <div class="event-main-host new-invite">
         <h2><%= link_to("Invite Guests", new_invitation_path(@event)) %></h2>

@@ -16,4 +16,8 @@ class Event < ApplicationRecord
   def date
     event_date.strftime('%I:%M %P, %B %-d, %Y')
   end
+
+  def invite_enable
+    event_date > Time.now
+  end
 end
