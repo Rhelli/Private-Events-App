@@ -11,7 +11,7 @@ class InvitationsController < ApplicationController
     @invitation = current_user.invitations.new(invitation_params)
     if @invitation.save
       flash[:success] = 'Your invitation has been sent.'
-      redirect_to event_path
+      redirect_to @invitation.invited_to_event
     else
       flash[:danger] = 'These users have already been invited.'
     end
@@ -42,7 +42,7 @@ class InvitationsController < ApplicationController
   private
 
   def invitation_params
-    params.require(:invitation).permit(:event_attendee, :invited_to_event)
+    params.require(:invitation).permit(:event_attendee_id, :invited_to_event_id)
   end
 
   def rsvp_params

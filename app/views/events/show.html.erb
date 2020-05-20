@@ -19,25 +19,50 @@
   </div>
   <div class="event-main-container">
     <div class="event-show-user-list">
-      <div class="event-attending-title">
-        <h2>Attending</h2>
-      </div>
-      <div class="event-attending">
-        <div class="event-attending-list">
-          <ul>
-            <% @event.attendees.each do |attendee| %>
-            <% if attendee.nil? %>
-              <div>
-                <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
+      <div class="event-show-invited-list">
+        <div class="event-attending-title">
+          <h2>Invited</h2>
+        </div>
+        <div class="event-attending">
+          <div class="event-attending-list">
+            <ul>
+              <% @event.attendees.each do |attendee| %>
+              <% if attendee.nil? %>
+                <div>
+                  <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
+                </div>
+              <% end %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(attendee.name.titleize, user_path(attendee))%></h2>
+                </li>
               </div>
-            <% end %>
-            <div class="event-card">
-              <li>
-                <h2><%= link_to(attendee.name.titleize, user_path(attendee))%></h2>
-              </li>
-            </div>
-            <% end %>
-          </ul>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="event-show-attending-list">
+        <div class="event-attending">
+          <div class="event-attending-title">
+            <h2>Attending</h2>
+          </div>
+          <div class="event-attending-list">
+            <ul>
+              <% @confirmed_attendees.each do |attendee| %>
+              <% if attendee.nil? %>
+                <div>
+                  <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
+                </div>
+              <% end %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(attendee.name.titleize, user_path(attendee))%></h2>
+                </li>
+              </div>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

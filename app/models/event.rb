@@ -13,6 +13,10 @@ class Event < ApplicationRecord
   scope :past_events, -> { where('event_date < ?', Time.now).order(date: :desc).includes(:creator) }
   scope :created_event, -> { where('creator_id', @current_user) }
 
+  def confirmed_attendees
+    invitations.where('rsvp = ?', true)
+  end
+
   def date
     event_date.strftime('%I:%M %P, %B %-d, %Y')
   end

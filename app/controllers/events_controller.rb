@@ -27,6 +27,7 @@ class EventsController < ApplicationController
     @past_events = Event.past_events
     @upcoming_events = Event.upcoming_events
     @invite_enable = @event.invite_enable
+    @confirmed_attendees = @event.confirmed_attendees
   end
 
   private
