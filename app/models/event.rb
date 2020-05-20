@@ -17,6 +17,10 @@ class Event < ApplicationRecord
     attendees.where('rsvp = ?', true)
   end
 
+  def unconfirmed_attendees
+    attendees.where('rsvp = ?', false)
+  end
+
   def date
     event_date.strftime('%I:%M %P, %B %-d, %Y')
   end
