@@ -206,7 +206,7 @@ body {
 .signin-form{
   width: 100%;
   height: auto;
-  overflow: hidden;
+  overflow-y: scroll;
   text-align: center;
   h2 {
     font: 400 40px/40px 'Baloo Bhaina 2';

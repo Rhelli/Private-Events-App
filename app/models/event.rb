@@ -6,20 +6,12 @@ class Event < ApplicationRecord
   before_save { self.name = name.downcase.capitalize! }
   validates :name, presence: true, length: { maximum: 120 }, allow_nil: false
   validates :event_date, presence: true
-  validate  :start_date_in_future
   validates :description, presence: true, length: { maximum: 20_000 }
   validates :creator_id, presence: true
 
   scope :upcoming_events, -> { where('event_date >= ?', Time.now).order(date: :desc).includes(:creator) }
   scope :past_events, -> { where('event_date < ?', Time.now).order(date: :desc).includes(:creator) }
   scope :created_event, -> { where('creator_id', @current_user) }
-
-  def start_date_in_future
-    if event_date < Time.now
-      errors.add(:event, "You cannot create an event in the past.")
-      return
-    end
-  end
 
   def date
     event_date.strftime('%I:%M %P, %B %-d, %Y')
