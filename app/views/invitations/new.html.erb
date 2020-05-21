@@ -17,8 +17,7 @@
 
             <div class="row">
               <%= f.label :event_attendee_id, "Who would you like to invite?" %>
-              <%= f.collection_select(:event_attendee, User.where.not(id: @current_user.id), :id, :name, {:multiple => true} ) %>
-              <%#= f.select :event_attendee_id, User.all.map { |i| [i.name, i.id] } %>
+              <%= f.collection_select(:event_attendee_id, User.where.not(id: @current_user.id), :id, :name, {:multiple => true} ) %>
             </div>
           </div>          
 

@@ -1043,6 +1043,7 @@ body {
   display: flex;
   align-content: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 20px;
   background-image: none;
@@ -1272,7 +1273,7 @@ body {
   .row:last-child {
     select {
       font: 500 18px/22px 'Manrope';
-      height: 120px;
+      height: auto;
       overflow: hidden;
       overflow-y: scroll;
       &:checked {
