@@ -18,6 +18,7 @@ class Invitation < ApplicationRecord
   end
 
   private
+
   def creator_cant_be_invited
     event_attendee != invited_to_event.creator
   end
