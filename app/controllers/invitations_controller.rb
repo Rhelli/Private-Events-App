@@ -25,7 +25,7 @@ class InvitationsController < ApplicationController
     if rsvp_params == 'true'
       @invitation.accepted
       flash[:info] = "Invitation accepted! This event has been added to your 'Upcoming Events' list."
-      redirect_to user_path(@current_user)
+      redirect_to @invitation.event_attendee
     else
       @invitation.declined
       flash[:info] = "You have declined to attend this event. #{view_context.link_to('Go Back', @invitation)}".html_safe
@@ -36,7 +36,7 @@ class InvitationsController < ApplicationController
   def destroy
     @invitation.destroy
     flash[:info] = 'Invitation successfully deleted.'
-    redirect_to root_url
+    redirect_to @invitation.event_attendee
   end
 
   private

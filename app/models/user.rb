@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
 
   def invites
-    invitations.where('rsvp is null').order(created_at: :asc)
+    invitations.where('rsvp is null').order(created_at: :desc)
   end
 
   def upcoming_events
