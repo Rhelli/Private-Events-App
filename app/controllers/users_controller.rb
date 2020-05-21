@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @upcoming_events = @user.upcoming_events
     @past_events = @user.past_events
-    @invitees = @user.invitees
+    @invitees = @user.invites
     @hosted_events = @user.hosted_events
   end
 
