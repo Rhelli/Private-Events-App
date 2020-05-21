@@ -43,7 +43,7 @@ RSpec.describe UsersController, type: :controller do
 
     it 'shows users upcoming events' do
       expect(user1.upcoming_events.count).to eq(0)
-      Invitation.create!(event_attendee_id: '1', invited_to_event_id: '2', created_at: '2018-12-12 12:30:00 UTC', updated_at: '2018-12-12 12:30:00 UTC', rsvp: 'false')
+      Invitation.create!(event_attendee_id: '1', invited_to_event_id: '2', created_at: '2018-12-12 12:30:00 UTC', updated_at: '2018-12-12 12:30:00 UTC', rsvp: 'true')
       expect(user1.upcoming_events.count).to eq(1)
     end
 
