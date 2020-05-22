@@ -1,0 +1,83 @@
+<div class="container event-container user-show-container">
+  <div class="user-event-counter">
+    <p><%= @user.upcoming_events.count %></p>
+    <p>upcoming <%= 'event'.pluralize(@user.upcoming_events.count) %></p>
+  </div>
+  <div class="user-invitation-counter">
+    <p><%= @user.invites.count %></p>
+    <p><%= 'invitation'.pluralize(@user.invitations.count) %></p>
+  </div>
+  <h1>My Events</h1>
+  <div class="user-events-container">
+    <div class="user-event-invitations">
+      <div class="subtitle-container">
+        <h2 class="label-subtitle">Event Invitations</h2>
+      </div>
+      <div class="user-events-lists">
+        <ul>
+          <% @invitees.each do |invitation| %>
+            <div class="event-card">
+              <li>
+                <h2><%= link_to(invitation.invited_to_event.name, invitation_path(invitation)) %></h2>
+                <div>
+                  <p>Invited <%= time_ago_in_words(invitation.created_at)%> ago</p>
+                </div>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+      <div class="subtitle-container">
+        <h2 class="label-subtitle">Hosted Events</h2>
+      </div>
+      <div class="user-events-lists">
+        <ul>
+          <% @hosted_events.each do |event| %>
+            <div class="event-card">
+              <li>
+                <h2><%= link_to(event.name, event_path(event)) %></h2>
+                <div>
+                  <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+                </div>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="user-upcoming-events">
+      <h2 class="label-subtitle">Upcoming</h2>
+      <div class="user-events-lists">
+        <ul>
+          <% @upcoming_events.each do |event| %>
+            <div class="event-card">
+              <li>
+                <h2><%= link_to(event.name, event_path(event)) %></h2>
+                <div>
+                  <p>Created <%= time_ago_in_words(event.created_at)%> ago</p>
+                </div>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="user-past-events">
+      <h2 class="label-subtitle">Past Events</h2>
+      <div class="user-events-lists">
+        <ul>
+          <% @user.past_events.each do |event| %>
+            <div class="event-card">
+              <li>
+                <h2><%= link_to(event.name, event_path(event)) %></h2>
+                <div>
+                  <p>Ended <%= time_ago_in_words(event.event_date)%> ago</p>
+                </div>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

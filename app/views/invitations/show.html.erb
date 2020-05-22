@@ -1,0 +1,30 @@
+<div class="container event-container event-main invitation-show-container">
+  <div class="event-main-nav">
+    <%= link_to user_path(current_user.id) do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </div>
+  <div class="event-main-container invitation-card-container">
+    <div class="invitation-event-desc">
+      <h2><%= @event.name %></h2>
+      <h3><%= @invitation.date%><h3>
+      <div>
+        <h3>You have cordially been invited to join the "<%= @event.name %>" event, hosted by <%= @event.creator.name.titleize %></h3>
+        <% if @event.description %>
+          <p><%= @event.description %></p>
+        <% end %>
+      </div>
+      <div class="form-check rsvp-box">
+        <div>
+          <p><%= link_to("Accept Invitation", invitation_path(@invitation, response: true), method: :patch) %></p>
+        </div>
+        <div>
+          <p><%= link_to("Decline Invitation", invitation_path(@invitation, response: false), method: :patch) %></p>
+        </div>
+      </div>
+      <div class="invite-delete">
+        <p><%= link_to('Delete this invitation', invitation_path(@invitation), method: :delete, data: {confirm: "Are you sure you want to delete this invitation?"}) %></p>
+      </div>
+    </div>
+  </div>
+</div>

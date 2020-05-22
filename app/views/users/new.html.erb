@@ -1,0 +1,21 @@
+<div class="container signup-container">
+  <div class="signup-graphic">
+  </div>
+  <div class="signup-form d-flex justify-content-center">
+    <h1>Welcome to Private Events</h1>
+
+    <p>Join a community where you can create, customize and host great parties.</p>
+
+    <p>All you need to get started is your name.</p>
+
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name, class: 'hidden' %>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Enter your name to get started...' %>
+
+      <%= f.submit 'Join the Party!', class: 'btn join-btn' %>
+
+    <% end %>
+
+    <p class="disclaimer">By signing up to join the Private Events community, you agree to Private Event's <a href="#" alt="T&Cs">Terms & Conditions</a> and <a href="#" alt="Privacy Policy">Privacy Policy.</a></p>
+  </div>
+</div>
