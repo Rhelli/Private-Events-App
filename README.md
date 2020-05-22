@@ -12,6 +12,19 @@ The clear focus here then, is on model associations.
 
 > N.B. The invitation creation page is available to visit in this version however functionality to send invitations to other users has not yet been implemented.
 
+## ⚒️ The Project Brief
+
+The specifications and the guides to the project can be found The Odin Project's [Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) page.
+
+The focus of this project is on forming the correct associations between different models. Namely, in this project, we have three main models to work with - users, events and invitations. A brief breakdown as to the associations:
+  - Users can have many events as both hosts and as party attendees
+  - Events can have many users as attendees
+  - Invitations can have one owner and one creator.
+
+From examining the above, it should be clear that what is therefore required is a correct use of many-to-many relationships and foreign keys.
+
+As an additional requirement to this project (not listed on the TOP project page) is the implementation of TDD with the use of RSpec and Capybara.
+
 ***********
 
 ## 🖼️ Previews
@@ -35,9 +48,15 @@ The clear focus here then, is on model associations.
 
 ******
 
+<a href="screens/event-index-page.png" target="_blank"> <img alt="Private Event's Index Page" src="screens/event-index-page.png"/></a>
+
+> The Event Index page where all past and upcoming events can be viewed.
+
+******
+
 <a href="screens/profile-page.png" target="_blank"> <img alt="The Users Profile Page" src="screens/profile-page.png"/></a>
 
-> The user's profile page. Here the user can see their upcoming events they have RSVP'd to and have created, their invitations and their past events. Each individual list scrolls independently and the counters in the top right update in real time.
+> The user's profile page. Here the user can see their upcoming events they have RSVP'd to and have created, their invitations and their past events. Each individual list scrolls independently and the counters in the top right update dynamically.
 </p>
 
 ********
@@ -56,18 +75,12 @@ The clear focus here then, is on model associations.
 
 ********
 
-## ⚒️ The Project Brief
+<a href="screens/event-show-page.png" target="_blank"> <img alt="The Event's Main 'Show' Page" src="screens/event-show-page.png"/></a>
 
-The specifications and the guides to the project can be found The Odin Project's [Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) page.
+> The event show page, where you can see invited guests as well as those who have confirmed their attendance via RSVP. Hosts of the event are able to send new invitations via the 'Invite Guests' link in the top right hand corner.
+</p>
 
-The focus of this project is on forming the correct associations between different models. Namely, in this project, we have three main models to work with - users, events and invitations. A brief breakdown as to the associations:
-  - Users can have many events as both hosts and as party attendees
-  - Events can have many users as attendees
-  - Invitations can have one owner and one creator.
-
-From examining the above, it should be clear that what is therefore required is a correct use of many-to-many relationships and foreign keys.
-
-As an additional requirement to this project (not listed on the TOP project page) is the implementation of TDD with the use of RSpec and Capybara.
+********
 
 ## 🔬 Technologies & Languages Used
 
@@ -92,8 +105,8 @@ In order to get this webpage up and running, you may have to do a little set up 
   5. Now navigate to [localhost:4000](localhost:4000) in your browser to start playing around with the webpages!
 
 Alternatively if you'd like to confirm the entire project is passing testing:
-  1. `cd` into this repository in your terminal
-  2. Enter `bundle exec rspec` to run all tests
+  1. **`cd`** into this repository in your terminal
+  2. Enter **`bundle exec rspec`** to run all tests
 
 ## 🍻 Contributions, Issues & Forking
 
