@@ -8,4 +8,24 @@ class Event < ApplicationRecord
   validates :event_date, presence: true
   validates :description, presence: true, length: { maximum: 20_000 }
   validates :creator_id, presence: true
+
+  scope :upcoming_events, -> { where('event_date >= ?', Time.now).order(date: :desc).includes(:creator) }
+  scope :past_events, -> { where('event_date < ?', Time.now).order(date: :desc).includes(:creator) }
+  scope :created_event, -> { where('creator_id', @current_user) }
+
+  def confirmed_attendees
+    attendees.where('rsvp = ?', true)
+  end
+
+  def unconfirmed_attendees
+    attendees.where('rsvp = ?', false)
+  end
+
+  def date
+    event_date.strftime('%I:%M %P, %B %-d, %Y')
+  end
+
+  def invite_enable
+    event_date > Time.now
+  end
 end

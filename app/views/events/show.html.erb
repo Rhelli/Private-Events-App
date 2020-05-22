@@ -5,34 +5,74 @@
     <% end %>
   </div>
   <h1><%= @event.name %></h1>
-  <div class="event-main-host">
-    <h2>Hosted by: <%= link_to(@event.creator.name.capitalize, users_path(@user)) %> 🎉 </h2>
-    <% if current_user == @event.creator %>
+  <div class="event-tags-container">
+    <div class="event-main-host">
+      <h2>Hosted by: <%= link_to(@event.creator.name.titleize, users_path(@user)) %> 🎉 </h2>
+    </div>
+    <% if @event_creator && @invite_enable %>
+    <div class="new-invite-container">
       <div class="event-main-host new-invite">
         <h2><%= link_to("Invite Guests", new_invitation_path(@event)) %></h2>
       </div>
+    </div>
     <% end %>
   </div>
   <div class="event-main-container">
-    <div class="event-attending-title">
-      <h2>Attending</h2>
-    </div>
-    <div class="event-attending">
-      <div class="event-attending-list">
-        <ul>
-          <% @event.attendees.each do |attendee| %>
-          <% if attendee.nil? %>
-            <div>
-              <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
-            </div>
-          <% end %>
-          <div class="event-card">
-            <li>
-              <h2><%= link_to(attendee.name, user_path(attendee))%></h2>
-            </li>
+    <div class="event-show-user-list">
+      <div class="event-show-invited-list">
+        <div class="event-attending-title">
+          <h2>Invited</h2>
+        </div>
+        <div class="event-attending">
+          <div class="event-attending-list">
+            <ul>
+              <% @event.attendees.each do |attendee| %>
+              <% if attendee.nil? %>
+                <div>
+                  <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
+                </div>
+              <% end %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(attendee.name.titleize, user_path(attendee))%></h2>
+                </li>
+              </div>
+              <% end %>
+            </ul>
           </div>
-          <% end %>
-        </ul>
+        </div>
+      </div>
+      <div class="event-show-attending-list">
+        <div class="event-attending">
+          <div class="event-attending-title">
+            <h2>Attending</h2>
+          </div>
+          <div class="event-attending-list">
+            <ul>
+              <% @confirmed_attendees.each do |attendee| %>
+              <% if attendee.nil? %>
+                <div>
+                  <h2>No one is attending this event yet! Invite some friends to get the party started!</h2>
+                </div>
+              <% end %>
+              <div class="event-card">
+                <li>
+                  <h2><%= link_to(attendee.name.titleize, user_path(attendee))%></h2>
+                </li>
+              </div>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="event-show-desc">
+      <div>
+        <p>This event's scheduled date is: <%= @event.date %></p>
+      </div>
+      <div>
+        <p>The Details:</p>
+        <p><%= @event.description %></p>
       </div>
     </div>
   </div>

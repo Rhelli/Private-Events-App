@@ -11,14 +11,13 @@
         <%= form_for(@invitation) do |f| %>
           <div class="new-invite-form-fields">
             <div class="row">
-              <%= f.label :invited_to_event, "Which event is the invitation for?" %>
-              <%= f.collection_select :invited_to_event, Event.where(id: @created_events), :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
+              <%= f.label :invited_to_event_id, "Which event is the invitation for?" %>
+              <%= f.collection_select :invited_to_event_id, Event.where(id: @created_events), :id, :name, prompt: true, selected: @invitation.invited_to_event, class: 'form-control' %>
             </div>
 
             <div class="row">
-              <%= f.label :event_attendee, "Who would you like to invite?" %>
-              <%= f.collection_select(:event_attendee, User.where.not(id: @current_user.id), :id, :name, {:prompt => 'Select who you like to invite'}, {:multiple => true}) %>
-              <%#= selected: @invitation.event_attendee, %>
+              <%= f.label :event_attendee_id, "Who would you like to invite?" %>
+              <%= f.collection_select(:event_attendee_id, User.where.not(id: @current_user.id), :id, :name, {:multiple => true} ) %>
             </div>
           </div>          
 
