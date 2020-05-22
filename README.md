@@ -10,8 +10,6 @@ This project tasked us with building an event building site similar to that of [
 
 The clear focus here then, is on model associations.
 
-> N.B. The invitation creation page is available to visit in this version however functionality to send invitations to other users has not yet been implemented.
-
 ## ⚒️ The Project Brief
 
 The specifications and the guides to the project can be found The Odin Project's [Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) page.
