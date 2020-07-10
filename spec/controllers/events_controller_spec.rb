@@ -6,7 +6,7 @@ RSpec.describe EventsController, type: :controller do
   let!(:user2) { User.create!(name: 'Test2') }
   let!(:event1) { Event.create!(name: 'Sample Event', event_date: '2019-08-08 20:00:00 UTC', created_at: '2018-03-01 10:00:00 UTC', updated_at: '2018-03-01 10:00:00 UTC', creator_id: '2', description: 'blah') }
   let!(:event2) { Event.create!(name: 'Sample Event Dos', event_date: '2022-08-08 20:00:00 UTC', created_at: '2020-03-01 10:00:00 UTC', updated_at: '2020-03-01 10:00:00 UTC', creator_id: '2', description: 'dos blah') }
-  let(:create_event) { post :create, params: { event: { name: 'Tester', event_date: '2021-05-05 20:00:00 UTC', description: 'something or other'} } }
+  let(:create_event) { post :create, params: { event: { name: 'Tester', event_date: '2021-0505 20:00:00 UTC', description: 'something or other'} } }
   
   context 'displaying the events index' do
     it 'should display all the upcoming events in descending (created) order' do

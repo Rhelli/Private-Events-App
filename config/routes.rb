@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #get 'events/new', to: 'events#new'
   #post 'events/create', to: 'events#create'
   
+  resources :users
   resources :events
   resources :users
   resources :invitations
